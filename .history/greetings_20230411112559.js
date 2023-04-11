@@ -23,7 +23,8 @@ function greeting() {
   }
   numGreetings++;
 
-  localStorage.setItem("numItem", JSON.stringify(numGreetings));
+  localStorage.numItem = JSON.stringify(numGreetings);
+
 
   if (localStorage.getItem("numItem")) {
     numGreetings = JSON.parse(localStorage.getItem("numItem"));
@@ -31,6 +32,8 @@ function greeting() {
   }
 
   resetGreeting();
+
+  
 }
 
 function resetGreeting() {
@@ -38,4 +41,3 @@ function resetGreeting() {
 }
 
 greetingBtn.addEventListener("click", greeting);
-
