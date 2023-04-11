@@ -4,10 +4,6 @@ const greetingDisplay = document.querySelector(".greetingDisplay");
 const numCountDisplay = document.querySelector(".numCount");
 
 let numGreetings = 0;
-if (localStorage.getItem("numItem")) {
-  numGreetings = Number(localStorage.getItem("numItem"));
-}
-numCountDisplay.innerHTML = numGreetings;
 
 
 
@@ -30,11 +26,14 @@ function greeting() {
   numGreetings++;
 
   
-  localStorage.setItem("numItem", JSON.stringify(numGreetings));
+  localStorage.setItem("numItem", JSON.stringify(greetingVal));
 
  
- 
-  numCountDisplay.innerHTML = numGreetings;
+  if (localStorage.getItem("numItem")) {
+    numGreetings = Number(localStorage.getItem("numItem"));
+    numCountDisplay.innerHTML = numGreetings;
+  console.log(typeof numGreetings)
+  }
 
   resetGreeting();
 }
@@ -42,6 +41,5 @@ function greeting() {
 function resetGreeting() {
   greetingInput.value = "";
 }
-
 
 greetingBtn.addEventListener("click", greeting);

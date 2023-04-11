@@ -43,5 +43,4 @@ function resetGreeting() {
   greetingInput.value = "";
 }
 
-
 greetingBtn.addEventListener("click", greeting);

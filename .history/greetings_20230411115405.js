@@ -4,12 +4,6 @@ const greetingDisplay = document.querySelector(".greetingDisplay");
 const numCountDisplay = document.querySelector(".numCount");
 
 let numGreetings = 0;
-if (localStorage.getItem("numItem")) {
-  numGreetings = Number(localStorage.getItem("numItem"));
-}
-numCountDisplay.innerHTML = numGreetings;
-
-
 
 function greeting() {
   const greetingVal = greetingInput.value;
@@ -28,13 +22,14 @@ function greeting() {
     }
   }
   numGreetings++;
-
-  
+ const fakeNum = 5
   localStorage.setItem("numItem", JSON.stringify(numGreetings));
 
- 
- 
-  numCountDisplay.innerHTML = numGreetings;
+  console.log(localStorage.getItem("numItem"))
+  if (localStorage.getItem("numItem")) {
+    numGreetings = Number(localStorage.getItem("numItem"));
+    numCountDisplay.innerHTML = numGreetings;
+  }
 
   resetGreeting();
 }
@@ -42,6 +37,5 @@ function greeting() {
 function resetGreeting() {
   greetingInput.value = "";
 }
-
 
 greetingBtn.addEventListener("click", greeting);

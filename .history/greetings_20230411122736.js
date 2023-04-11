@@ -33,7 +33,11 @@ function greeting() {
   localStorage.setItem("numItem", JSON.stringify(numGreetings));
 
  
- 
+  // if (localStorage.getItem("numItem")) {
+  //   numGreetings = Number(localStorage.getItem("numItem"));
+  //   numCountDisplay.innerHTML = numGreetings;
+  // console.log(typeof numGreetings)
+  // }
   numCountDisplay.innerHTML = numGreetings;
 
   resetGreeting();
@@ -42,6 +46,5 @@ function greeting() {
 function resetGreeting() {
   greetingInput.value = "";
 }
-
 
 greetingBtn.addEventListener("click", greeting);
