@@ -1,0 +1,16 @@
+
+body {
+    
+    background-image: url("./images/background-main.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center; 
+}
+
+main {
+    text-align: center;
+}
+
+.inputName {
+    padding: 1.5em 0.5em;
+}
