@@ -85,7 +85,6 @@ button {
   .greetingDisplay {
     text-transform: capitalize;
     font-size: 1.8rem;
-    text-align: center;
   }
 
   .radio_container {
@@ -104,6 +103,5 @@ button {
 
 
   .clearBtn {
-    --c:  #c51616;
     margin-left: 1em;
   }

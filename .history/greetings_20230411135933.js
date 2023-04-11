@@ -48,9 +48,6 @@ function resetGreeting() {
 
 function clear() {
   localStorage.clear();
-  namesGreeted = {};
-  numGreetings = 0;
-  numCountDisplay.innerHTML = numGreetings
 }
 
 greetingBtn.addEventListener("click", greeting);
