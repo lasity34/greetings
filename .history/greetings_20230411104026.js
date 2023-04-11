@@ -3,7 +3,7 @@ const greetingBtn = document.querySelector(".greetBtn");
 const greetingDisplay = document.querySelector(".greetingDisplay");
 const numCountDisplay = document.querySelector(".numCount");
 
-let numGreetings = 0;
+let greetingCount = 0;
 
 function greeting() {
   const greetingVal = greetingInput.value;
@@ -11,31 +11,18 @@ function greeting() {
     "input[name='language']:checked"
   );
 
-    if (checkedRadioBtnElement || greetingVal) {
+  if (greetingVal) {
+    if (checkedRadioBtnElement) {
       const languageItem = checkedRadioBtnElement.value;
       if (languageItem === "english") {
         greetingDisplay.innerHTML = `Hello, ${greetingVal}`;
-       
-        
-      } else if (languageItem === "french") {
-        greetingDisplay.innerHTML = `bonjour, ${greetingVal}`;
-     
-       
-      } else if (languageItem === "castilian") {
-        greetingDisplay.innerHTML = `Saludo, ${greetingVal}`;
-    
-        
-      }
+        greetingInput.value = "";
+        greetingCount++;
+      } else if (languageItem === "french")
     }
+  }
 
-   resetGreeting()
-  
-   numGreetings++;
-  numCountDisplay.innerHTML = numGreetings;
-}
-
-function resetGreeting() {
-    greetingInput.value = "";
+  numCountDisplay.innerHTML = greetingCount;
 }
 
 greetingBtn.addEventListener("click", greeting);

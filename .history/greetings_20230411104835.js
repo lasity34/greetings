@@ -16,26 +16,24 @@ function greeting() {
       if (languageItem === "english") {
         greetingDisplay.innerHTML = `Hello, ${greetingVal}`;
        
-        
+        numGreetings++;
       } else if (languageItem === "french") {
         greetingDisplay.innerHTML = `bonjour, ${greetingVal}`;
-     
-       
+        greetingInput.value = "";
+        numGreetings++;
       } else if (languageItem === "castilian") {
         greetingDisplay.innerHTML = `Saludo, ${greetingVal}`;
-    
-        
+        greetingInput.value = "";
+        numGreetings++;
       }
     }
 
-   resetGreeting()
+    function resetGreeting() {
+        greetingInput.value = "";
+    }
   
-   numGreetings++;
-  numCountDisplay.innerHTML = numGreetings;
-}
 
-function resetGreeting() {
-    greetingInput.value = "";
+  numCountDisplay.innerHTML = numGreetings;
 }
 
 greetingBtn.addEventListener("click", greeting);

@@ -16,21 +16,21 @@ function greeting() {
       if (languageItem === "english") {
         greetingDisplay.innerHTML = `Hello, ${greetingVal}`;
        
-        
+        numGreetings++;
       } else if (languageItem === "french") {
         greetingDisplay.innerHTML = `bonjour, ${greetingVal}`;
-     
-       
+        greetingInput.value = "";
+        numGreetings++;
       } else if (languageItem === "castilian") {
         greetingDisplay.innerHTML = `Saludo, ${greetingVal}`;
-    
-        
+        greetingInput.value = "";
+        numGreetings++;
       }
     }
 
    resetGreeting()
   
-   numGreetings++;
+
   numCountDisplay.innerHTML = numGreetings;
 }
 
