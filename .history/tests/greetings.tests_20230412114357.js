@@ -72,7 +72,5 @@ describe("Test alert messages for invalid input", function() {
         const greetingTest = greetingFactory();
 
         
-
-        assert.equal("please fill in name", )
     })
 })

@@ -1,7 +1,6 @@
 function greetingFactory() {
   let newName = "";
   let newLanguage = "";
-  let newAlert = "";
   let greetCount = 0;
   let greetedObj = {};
 
@@ -12,8 +11,6 @@ function greetingFactory() {
   function callName() {
     return `hello, ${newName}`;
   }
-
-
 
   function setLanguage(language) {
     newLanguage = language;
@@ -43,15 +40,8 @@ function greetingFactory() {
     return greetCount;
   }
 
-  function callAlert() {
-    if (!newLanguage && !newName) {
-    newAlert = alert("please select language and fill in name your name")
-    }
-   else if (!newName) {
-    newAlert =  alert("please fill in your name")
-    } else if (!newLanguage) {
-    newAlert =  alert("please select language")
-    }
+  function getAlertCall() {
+
   }
 
   return {
@@ -61,6 +51,6 @@ function greetingFactory() {
     getLanguage,
     callNameCount,
     getNameCount,
-    callAlert
+    getAlertCall
   };
 }

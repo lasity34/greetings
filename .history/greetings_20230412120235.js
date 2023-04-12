@@ -27,7 +27,7 @@ function greeting() {
   
   }
 
-  if (!checkedRadioBtnElement && !greetingVal) {
+  if (!checkedRadioBtnElement && !newName) {
     alert("please select language and fill in name your name")
   }
  else if (!greetingVal) {

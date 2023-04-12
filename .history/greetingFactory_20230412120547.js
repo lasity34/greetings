@@ -49,7 +49,7 @@ function greetingFactory() {
     }
    else if (!newName) {
     newAlert =  alert("please fill in your name")
-    } else if (!newLanguage) {
+    } else if (!checkedRadioBtnElement) {
     newAlert =  alert("please select language")
     }
   }

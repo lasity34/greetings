@@ -13,8 +13,6 @@ function greetingFactory() {
     return `hello, ${newName}`;
   }
 
-
-
   function setLanguage(language) {
     newLanguage = language;
   }
@@ -43,14 +41,14 @@ function greetingFactory() {
     return greetCount;
   }
 
-  function callAlert() {
-    if (!newLanguage && !newName) {
-    newAlert = alert("please select language and fill in name your name")
+  function getAlertCall() {
+    if (!checkedRadioBtnElement && !greetingVal) {
+      alert("please select language and fill in name your name")
     }
-   else if (!newName) {
-    newAlert =  alert("please fill in your name")
-    } else if (!newLanguage) {
-    newAlert =  alert("please select language")
+   else if (!greetingVal) {
+      alert("please fill in your name")
+    } else if (!checkedRadioBtnElement) {
+      alert("please select language")
     }
   }
 
@@ -61,6 +59,6 @@ function greetingFactory() {
     getLanguage,
     callNameCount,
     getNameCount,
-    callAlert
+    getAlertCall
   };
 }

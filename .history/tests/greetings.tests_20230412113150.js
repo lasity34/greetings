@@ -38,7 +38,7 @@ describe("Test greet values", function () {
 });
 
 
-describe("test value input", function() {
+describe("test numbers", function() {
     it("It should test if number comes back when name and language is called", function() {
         const greetingTest = greetingFactory();
 
@@ -63,16 +63,5 @@ describe("test value input", function() {
         greetingTest.setName("john")
         greetingTest.callNameCount()
         assert.equal(2, greetingTest.getNameCount())
-    })
-})
-
-
-describe("Test alert messages for invalid input", function() {
-    it("alert should pop up when there is no input", function() {
-        const greetingTest = greetingFactory();
-
-        
-
-        assert.equal("please fill in name", )
     })
 })

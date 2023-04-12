@@ -65,14 +65,3 @@ describe("test value input", function() {
         assert.equal(2, greetingTest.getNameCount())
     })
 })
-
-
-describe("Test alert messages for invalid input", function() {
-    it("alert should pop up when there is no input", function() {
-        const greetingTest = greetingFactory();
-
-        
-
-        assert.equal("please fill in name", )
-    })
-})

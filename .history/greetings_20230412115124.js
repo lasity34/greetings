@@ -14,9 +14,9 @@ let namesGreeted = {};
 
 function greeting() {
   const greetingVal = greetingInput.value;
-  
-  if (checkedRadioBtnElement && greetingVal) {
-    const languageItem = checkedRadioBtnElement.value;
+  const languageItem = checkedRadioBtnElement.value;
+  if (languageItem && greetingVal) {
+    
     greetIntance.setName(greetingVal);
     greetIntance.setLanguage(languageItem);
     greetIntance.callNameCount();

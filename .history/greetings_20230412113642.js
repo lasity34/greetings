@@ -57,7 +57,7 @@ function clear() {
   sumCount = 0;
   numCountDisplay.innerHTML = sumCount;
   greetingDisplay.innerHTML = "";
-  checkedRadioBtnElement.checked = false
+  checkedRadioBtnElement.value = ""
 }
 
 greetingBtn.addEventListener("click", greeting);
