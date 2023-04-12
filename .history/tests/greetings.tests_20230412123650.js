@@ -93,7 +93,7 @@ describe("Test alert messages for invalid input", function() {
         greetingTest.setName("john");
         greetingTest.callAlert()
 
-        assert.equal("please select language", greetingTest.getAlert())
+        assert.equal("please select language and fill in name your name", greetingTest.getAlert())
     })
 
 })

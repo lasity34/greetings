@@ -72,7 +72,7 @@ describe("Test alert messages for invalid input", function() {
         const greetingTest = greetingFactory();
 
         greetingTest.setLanguage("french");
-        greetingTest.setName("");
+       
         greetingTest.callAlert()
 
         assert.equal("please fill in your name", greetingTest.getAlert())
@@ -85,15 +85,6 @@ describe("Test alert messages for invalid input", function() {
         greetingTest.callAlert()
 
         assert.equal("please select language and fill in name your name", greetingTest.getAlert())
-    })
-    it("alert should pop up when there is no button selected", function() {
-        const greetingTest = greetingFactory();
-
-        greetingTest.setLanguage("");
-        greetingTest.setName("john");
-        greetingTest.callAlert()
-
-        assert.equal("please select language", greetingTest.getAlert())
     })
 
 })

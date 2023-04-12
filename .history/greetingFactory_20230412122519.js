@@ -48,7 +48,7 @@ function greetingFactory() {
     newAlert = "please select language and fill in name your name"
     }
    else if (!newName) {
-    newAlert =  "please fill in your name"
+    newAlert =  alert("please fill in your name")
     } else if (!newLanguage) {
     newAlert =  "please select language"
     }
