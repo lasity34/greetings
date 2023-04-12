@@ -29,16 +29,21 @@ function greetingFactory() {
   }
 
   function callNameCount() {
-    if (greetedObj[newName] === undefined && newName && newLanguage) {
+    if (greetedObj[newName] === undefined) {
       greetCount++;
 
       greetedObj[newName] = 0;
+
+      
     }
   }
 
+  
   function getNameCount() {
-    return greetCount;
+    console.log(greetCount)
+    return greetCount
   }
+
 
   return {
     setName,

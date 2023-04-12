@@ -33,12 +33,17 @@ function greetingFactory() {
       greetCount++;
 
       greetedObj[newName] = 0;
+
+      
     }
   }
 
+  
   function getNameCount() {
-    return greetCount;
+
+    return greetCount
   }
+
 
   return {
     setName,

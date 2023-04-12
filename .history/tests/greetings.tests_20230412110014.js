@@ -42,8 +42,7 @@ describe("test numbers", function() {
     it("It should test if number comes back when name and language is called", function() {
         const greetingTest = greetingFactory();
 
-        greetingTest.setLanguage("castilian");
-        greetingTest.setName("bjorn")
+       
    
         greetingTest.callNameCount()
         assert.equal(1, greetingTest.getNameCount())
