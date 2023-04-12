@@ -53,14 +53,14 @@ function greetingFactory() {
   }
 
   function callAlert() {
-    if (!getRadioValue() && !newName) {
+    if (!newLanguage && !newName) {
     newAlert = "please select language and fill in name your name"
     getAlert()
     }
    else if (!newName) {
     newAlert =  "please fill in your name"
     getAlert()
-    } else if (!getRadioValue()) {
+    } else if (!newLanguage) {
     newAlert =  "please select language"
     getAlert()
     }

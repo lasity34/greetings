@@ -7,6 +7,7 @@ const numCountDisplay = document.querySelector(".numCount");
 let greetIntance = greetingFactory();
 let sumCount = 0;
 
+
 let namesGreeted = {};
 
 function greeting() {
@@ -24,11 +25,17 @@ function greeting() {
     let numGreetings = greetIntance.getNameCount();
     sumCount = numGreetings;
     numCountDisplay.innerHTML = numGreetings;
+  } 
+
+  if (!checkedRadioBtnElement || !greetingVal){
+  
+    greetIntance.callAlert();
+    greetIntance.getAlert()
   }
 
-  greetIntance.setName(greetingVal);
-  greetIntance.setRadioValue(checkedRadioBtnElement);
-  greetIntance.callAlert();
+  
+
+;
 
   localStorage.setItem("numItem", JSON.stringify(sumCount));
 
@@ -50,11 +57,10 @@ function clear() {
   sumCount = 0;
   numCountDisplay.innerHTML = sumCount;
   greetingDisplay.innerHTML = "";
-  resetGreeting();
 
   const radioBtns = document.querySelector("input[name='language']:checked");
   if (radioBtns) {
-    radioBtns.checked = "";
+    radioBtns.checked = false;
   }
 }
 

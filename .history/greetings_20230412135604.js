@@ -3,42 +3,50 @@ const greetingBtn = document.querySelector(".greetBtn");
 const clearBtn = document.querySelector(".clearBtn");
 const greetingDisplay = document.querySelector(".greetingDisplay");
 const numCountDisplay = document.querySelector(".numCount");
+const checkedRadioBtnElement = document.querySelector(
+  "input[name='language']:checked"
+);
 
 let greetIntance = greetingFactory();
-let sumCount = 0;
+let sumCount = 0
 
 let namesGreeted = {};
 
 function greeting() {
   const greetingVal = greetingInput.value;
-  const checkedRadioBtnElement = document.querySelector(
-    "input[name='language']:checked"
-  );
+  
   if (checkedRadioBtnElement && greetingVal) {
     const languageItem = checkedRadioBtnElement.value;
-
+    console.log(languageItem)
     greetIntance.setName(greetingVal);
     greetIntance.setLanguage(languageItem);
     greetIntance.callNameCount();
     greetingDisplay.innerHTML = greetIntance.getLanguage();
-    let numGreetings = greetIntance.getNameCount();
-    sumCount = numGreetings;
-    numCountDisplay.innerHTML = numGreetings;
+    let numGreetings = greetIntance.getNameCount()
+    sumCount = numGreetings
+    numCountDisplay.innerHTML = numGreetings
+  
   }
 
-  greetIntance.setName(greetingVal);
-  greetIntance.setRadioValue(checkedRadioBtnElement);
-  greetIntance.callAlert();
+  if (!checkedRadioBtnElement && !greetingVal) {
+    alert("please select language and fill in name your name")
+  }
+ else if (!greetingVal) {
+    alert("please fill in your name")
+  } else if (!checkedRadioBtnElement) {
+    alert("please select language")
+  }
 
   localStorage.setItem("numItem", JSON.stringify(sumCount));
 
   resetGreeting();
 }
 
+
 if (localStorage.getItem("numItem")) {
   sumCount = Number(localStorage.getItem("numItem"));
 }
-numCountDisplay.innerHTML = sumCount;
+numCountDisplay.innerHTML = sumCount
 
 function resetGreeting() {
   greetingInput.value = "";
@@ -50,12 +58,7 @@ function clear() {
   sumCount = 0;
   numCountDisplay.innerHTML = sumCount;
   greetingDisplay.innerHTML = "";
-  resetGreeting();
-
-  const radioBtns = document.querySelector("input[name='language']:checked");
-  if (radioBtns) {
-    radioBtns.checked = "";
-  }
+  checkedRadioBtnElement.checked = ""
 }
 
 greetingBtn.addEventListener("click", greeting);

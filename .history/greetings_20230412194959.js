@@ -14,8 +14,9 @@ function greeting() {
   const checkedRadioBtnElement = document.querySelector(
     "input[name='language']:checked"
   );
+  const languageItem = checkedRadioBtnElement.value || false
   if (checkedRadioBtnElement && greetingVal) {
-    const languageItem = checkedRadioBtnElement.value;
+    
 
     greetIntance.setName(greetingVal);
     greetIntance.setLanguage(languageItem);
@@ -24,11 +25,16 @@ function greeting() {
     let numGreetings = greetIntance.getNameCount();
     sumCount = numGreetings;
     numCountDisplay.innerHTML = numGreetings;
+   
+
   }
 
-  greetIntance.setName(greetingVal);
-  greetIntance.setRadioValue(checkedRadioBtnElement);
-  greetIntance.callAlert();
+   greetIntance.setName(greetingVal);
+    greetIntance.setLanguage(languageItem);
+   greetIntance.callAlert()
+
+  
+  
 
   localStorage.setItem("numItem", JSON.stringify(sumCount));
 
@@ -54,7 +60,7 @@ function clear() {
 
   const radioBtns = document.querySelector("input[name='language']:checked");
   if (radioBtns) {
-    radioBtns.checked = "";
+    radioBtns.checked = ''
   }
 }
 

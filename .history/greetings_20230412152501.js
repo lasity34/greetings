@@ -26,9 +26,10 @@ function greeting() {
     numCountDisplay.innerHTML = numGreetings;
   }
 
-  greetIntance.setName(greetingVal);
-  greetIntance.setRadioValue(checkedRadioBtnElement);
-  greetIntance.callAlert();
+  if (!checkedRadioBtnElement || !greetingVal) {
+    greetIntance.callAlert();
+    greetIntance.getAlert();
+  }
 
   localStorage.setItem("numItem", JSON.stringify(sumCount));
 
@@ -50,11 +51,10 @@ function clear() {
   sumCount = 0;
   numCountDisplay.innerHTML = sumCount;
   greetingDisplay.innerHTML = "";
-  resetGreeting();
 
   const radioBtns = document.querySelector("input[name='language']:checked");
   if (radioBtns) {
-    radioBtns.checked = "";
+    radioBtns.checked = false;
   }
 }
 
