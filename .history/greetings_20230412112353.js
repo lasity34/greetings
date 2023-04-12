@@ -21,7 +21,6 @@ function greeting() {
     greetIntance.callNameCount();
     greetingDisplay.innerHTML = greetIntance.getLanguage();
     let numGreetings = greetIntance.getNameCount()
-    sumCount = numGreetings
     numCountDisplay.innerHTML = numGreetings
   
   }
@@ -35,16 +34,16 @@ function greeting() {
     alert("please select language")
   }
 
-  localStorage.setItem("numItem", JSON.stringify(sumCount));
+  localStorage.setItem("numItem", JSON.stringify(numGreetings));
 
   resetGreeting();
 }
 
 
 if (localStorage.getItem("numItem")) {
-  sumCount = Number(localStorage.getItem("numItem"));
+  numGreetings = Number(localStorage.getItem("numItem"));
 }
-numCountDisplay.innerHTML = sumCount
+numCountDisplay.innerHTML = numGreetings
 
 function resetGreeting() {
   greetingInput.value = "";
@@ -53,8 +52,8 @@ function resetGreeting() {
 function clear() {
   localStorage.clear();
   namesGreeted = {};
-  sumCount = 0;
-  numCountDisplay.innerHTML = sumCount;
+  numGreetings = 0;
+  numCountDisplay.innerHTML = numGreetings;
   greetingDisplay.innerHTML = ""
 }
 

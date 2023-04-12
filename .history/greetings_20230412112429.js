@@ -42,7 +42,7 @@ function greeting() {
 
 
 if (localStorage.getItem("numItem")) {
-  sumCount = Number(localStorage.getItem("numItem"));
+  numGreetings = Number(localStorage.getItem("numItem"));
 }
 numCountDisplay.innerHTML = sumCount
 
@@ -53,8 +53,8 @@ function resetGreeting() {
 function clear() {
   localStorage.clear();
   namesGreeted = {};
-  sumCount = 0;
-  numCountDisplay.innerHTML = sumCount;
+  numGreetings = 0;
+  numCountDisplay.innerHTML = numGreetings;
   greetingDisplay.innerHTML = ""
 }
 
