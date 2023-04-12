@@ -18,7 +18,6 @@ function greeting() {
     const languageItem = checkedRadioBtnElement.value;
     greetIntance.setName(greetingVal);
     greetIntance.setLanguage(languageItem);
-    greetIntance.callNameCount();
     greetingDisplay.innerHTML = greetIntance.getLanguage();
     numCountDisplay.innerHTML = numGreetings
   

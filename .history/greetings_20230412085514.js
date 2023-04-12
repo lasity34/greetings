@@ -3,10 +3,10 @@ const greetingBtn = document.querySelector(".greetBtn");
 const clearBtn = document.querySelector(".clearBtn");
 const greetingDisplay = document.querySelector(".greetingDisplay");
 const numCountDisplay = document.querySelector(".numCount");
-let greetIntance = greetingFactory();
-let numGreetings = greetIntance.getNameCount()
+let greetIntance = greetingFactory()
 
-let namesGreeted = {};
+
+const namesGreeted = {};
 
 function greeting() {
   const greetingVal = greetingInput.value;
@@ -14,35 +14,36 @@ function greeting() {
     "input[name='language']:checked"
   );
 
-  if (checkedRadioBtnElement && greetingVal) {
+  if (checkedRadioBtnElement || greetingVal) {
     const languageItem = checkedRadioBtnElement.value;
     greetIntance.setName(greetingVal);
     greetIntance.setLanguage(languageItem);
-    greetIntance.callNameCount();
     greetingDisplay.innerHTML = greetIntance.getLanguage();
-    numCountDisplay.innerHTML = numGreetings
-  
+    // if (languageItem === "english") {
+    //   greetingDisplay.innerHTML = `Hello, ${greetingVal}`;
+    // } else if (languageItem === "french") {
+    //   greetingDisplay.innerHTML = `bonjour, ${greetingVal}`;
+    // } else if (languageItem === "castilian") {
+    //   greetingDisplay.innerHTML = `Saludo, ${greetingVal}`;
+    // }
   }
 
-  if (!checkedRadioBtnElement && !greetingVal) {
-    alert("please select language and fill in name your name")
-  }
- else if (!greetingVal) {
-    alert("please fill in your name")
-  } else if (!checkedRadioBtnElement) {
-    alert("please select language")
-  }
+  if (namesGreeted[greetingVal] === undefined) {
+    numGreetings++;
 
+    namesGreeted[greetingVal] = 0;
+
+    numCountDisplay.innerHTML = numGreetings;
+  }
   localStorage.setItem("numItem", JSON.stringify(numGreetings));
 
   resetGreeting();
 }
 
-
 if (localStorage.getItem("numItem")) {
   numGreetings = Number(localStorage.getItem("numItem"));
 }
-numCountDisplay.innerHTML = numGreetings
+numCountDisplay.innerHTML = numGreetings;
 
 function resetGreeting() {
   greetingInput.value = "";
@@ -53,7 +54,6 @@ function clear() {
   namesGreeted = {};
   numGreetings = 0;
   numCountDisplay.innerHTML = numGreetings;
-  greetingDisplay.innerHTML = ""
 }
 
 greetingBtn.addEventListener("click", greeting);

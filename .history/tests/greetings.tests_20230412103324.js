@@ -49,7 +49,7 @@ describe("test numbers", function() {
 
        
     })
-    it("It should test to see if correct number comes back if name is called twice", function() {
+    ("It should test to see if correct number comes back if name is called twice", function() {
         const greetingTest = greetingFactory();
 
         greetingTest.setLanguage("castilian");

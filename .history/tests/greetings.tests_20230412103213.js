@@ -47,16 +47,6 @@ describe("test numbers", function() {
         greetingTest.callNameCount()
         assert.equal(1, greetingTest.getNameCount())
 
-       
-    })
-    it("It should test to see if correct number comes back if name is called twice", function() {
-        const greetingTest = greetingFactory();
-
-        greetingTest.setLanguage("castilian");
-        greetingTest.setName("bjorn")
-        greetingTest.callNameCount()
-        assert.equal(1, greetingTest.getNameCount())
-
         greetingTest.setLanguage("french");
         greetingTest.setName("bjorn")
         greetingTest.setName("john")

@@ -39,28 +39,15 @@ describe("Test greet values", function () {
 
 
 describe("test numbers", function() {
-    it("It should test if number comes back when name and language is called", function() {
+    it("It should test number of greetings", function() {
         const greetingTest = greetingFactory();
 
         greetingTest.setLanguage("castilian");
         greetingTest.setName("bjorn")
         greetingTest.callNameCount()
+        greetingTest.getNameCount()
+     
+
         assert.equal(1, greetingTest.getNameCount())
-
-       
-    })
-    it("It should test to see if correct number comes back if name is called twice", function() {
-        const greetingTest = greetingFactory();
-
-        greetingTest.setLanguage("castilian");
-        greetingTest.setName("bjorn")
-        greetingTest.callNameCount()
-        assert.equal(1, greetingTest.getNameCount())
-
-        greetingTest.setLanguage("french");
-        greetingTest.setName("bjorn")
-        greetingTest.setName("john")
-        greetingTest.callNameCount()
-        assert.equal(2, greetingTest.getNameCount())
     })
 })

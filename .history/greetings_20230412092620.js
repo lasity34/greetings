@@ -4,7 +4,7 @@ const clearBtn = document.querySelector(".clearBtn");
 const greetingDisplay = document.querySelector(".greetingDisplay");
 const numCountDisplay = document.querySelector(".numCount");
 let greetIntance = greetingFactory();
-let numGreetings = greetIntance.getNameCount()
+let numGreetings = 0;
 
 let namesGreeted = {};
 
@@ -18,19 +18,22 @@ function greeting() {
     const languageItem = checkedRadioBtnElement.value;
     greetIntance.setName(greetingVal);
     greetIntance.setLanguage(languageItem);
-    greetIntance.callNameCount();
     greetingDisplay.innerHTML = greetIntance.getLanguage();
-    numCountDisplay.innerHTML = numGreetings
   
+    if (namesGreeted[greetingVal] === undefined) {
+      numGreetings++;
+
+      namesGreeted[greetingVal] = 0;
+
+      numCountDisplay.innerHTML = numGreetings;
+    }
   }
 
   if (!checkedRadioBtnElement && !greetingVal) {
-    alert("please select language and fill in name your name")
+    alert("please tick radio button and fill name")
   }
- else if (!greetingVal) {
-    alert("please fill in your name")
-  } else if (!checkedRadioBtnElement) {
-    alert("please select language")
+  if (!greetingVal) {
+    alert("please fill in name")
   }
 
   localStorage.setItem("numItem", JSON.stringify(numGreetings));
@@ -42,7 +45,7 @@ function greeting() {
 if (localStorage.getItem("numItem")) {
   numGreetings = Number(localStorage.getItem("numItem"));
 }
-numCountDisplay.innerHTML = numGreetings
+numCountDisplay.innerHTML = numGreetings;
 
 function resetGreeting() {
   greetingInput.value = "";
@@ -53,7 +56,6 @@ function clear() {
   namesGreeted = {};
   numGreetings = 0;
   numCountDisplay.innerHTML = numGreetings;
-  greetingDisplay.innerHTML = ""
 }
 
 greetingBtn.addEventListener("click", greeting);

@@ -1,6 +1,6 @@
 describe("Test greet values", function () {
   it("it shoud take in input name and return greeting the name", function () {
-    const greetingTest = greetingFactory();
+    const greetingTest = greetingTest();
 
     greetingTest.setName("Bjorn");
     assert.equal("hello, Bjorn", greetingTest.callName());
@@ -10,7 +10,7 @@ describe("Test greet values", function () {
   });
 
   it("it should take in a name and english language and return english greeting", function () {
-    const greetingtest = greetingFactory();
+    const greetingtest = greeting();
 
     greetingtest.setLanguage("english");
     greetingtest.setName("bjorn");
@@ -19,7 +19,7 @@ describe("Test greet values", function () {
   });
 
   it("should take in name and return french greeting", function () {
-    const greetingtest = greetingFactory()
+    const greetingtest = greeting();
 
     greetingtest.setLanguage("french");
     greetingtest.setName("kat");
@@ -28,7 +28,7 @@ describe("Test greet values", function () {
   });
 
   it("should take in name and return castilian greeting", function () {
-    const greetingtest = greetingFactory();
+    const greetingtest = greeting();
 
     greetingtest.setLanguage("castilian");
     greetingtest.setName("john");
@@ -39,28 +39,16 @@ describe("Test greet values", function () {
 
 
 describe("test numbers", function() {
-    it("It should test if number comes back when name and language is called", function() {
-        const greetingTest = greetingFactory();
+    it("It should test number of greetings", function() {
+        const greetingTest = greeting();
 
         greetingTest.setLanguage("castilian");
         greetingTest.setName("bjorn")
-        greetingTest.callNameCount()
-        assert.equal(1, greetingTest.getNameCount())
-
-       
-    })
-    it("It should test to see if correct number comes back if name is called twice", function() {
-        const greetingTest = greetingFactory();
-
-        greetingTest.setLanguage("castilian");
-        greetingTest.setName("bjorn")
-        greetingTest.callNameCount()
-        assert.equal(1, greetingTest.getNameCount())
-
         greetingTest.setLanguage("french");
-        greetingTest.setName("bjorn")
         greetingTest.setName("john")
-        greetingTest.callNameCount()
-        assert.equal(2, greetingTest.getNameCount())
+        greetingTest.setName("mark")
+        greetingTest.setName("nick")
+
+        assert.equal(4, greetingTest.getNameCount())
     })
 })
