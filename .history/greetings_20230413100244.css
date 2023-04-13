@@ -2,11 +2,10 @@
 html {
     font-family: 'Mynerve', cursive;
     background-color: rgb(255, 245, 238);
-    color: rgb(222, 213, 213);
-    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(./images/blue-teal-brush-stroke-textured-background\(1\).jpg);
-    background-position: center;
+    color: white;
+    background-image: url(./images/blue-teal-brush-stroke-textured-background\(1\).jpg);
     background-size: cover;
-    font-size: 1.4rem;
+   
 }
 
 main {
@@ -42,7 +41,7 @@ label {
     height: 25px;
     padding: 0.5em 1em;
     text-indent: 2px;
-    font-size: 1rem;
+   
 }
 
 /* button */

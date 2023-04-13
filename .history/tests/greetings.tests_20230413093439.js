@@ -118,22 +118,5 @@ describe("Test alert messages for invalid input", function() {
 })
 
 describe("Test clear button then values", function() {
-  it("should clear increment when clear is clicked", function() {
-    const greetTest = greetingFactory();
-
-    greetingTest.setLanguage("castilian");
-    greetingTest.setName("bjorn")
-    greetingTest.callNameCount()
-    assert.equal(1, greetingTest.getNameCount())
-
-    greetingTest.setLanguage("french");
-    greetingTest.setName("bjorn")
-    greetingTest.setName("john")
-    greetingTest.callNameCount()
-    assert.equal(2, greetingTest.getNameCount())
-
-    greetTest.clear()
-    
-    assert.equal(0, greetTest.getNameCount())
-  })
+  it("should ")
 })

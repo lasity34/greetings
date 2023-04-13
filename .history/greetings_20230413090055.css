@@ -2,16 +2,10 @@
 html {
     font-family: 'Mynerve', cursive;
     background-color: rgb(255, 245, 238);
-    color: rgb(222, 213, 213);
-    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(./images/blue-teal-brush-stroke-textured-background\(1\).jpg);
-    background-position: center;
-    background-size: cover;
-    font-size: 1.4rem;
 }
 
 main {
     text-align: center;
-   
 }
 
 /* input */
@@ -42,7 +36,7 @@ label {
     height: 25px;
     padding: 0.5em 1em;
     text-indent: 2px;
-    font-size: 1rem;
+   
 }
 
 /* button */
@@ -78,7 +72,6 @@ button {
     font-weight: bold;  
     border: none;
     border-radius: 2%;
-    color: rgb(196, 199, 201);
   }
 
   .btn_container {
@@ -116,5 +109,5 @@ button {
   }
 
   .unit_btn {
-    --c:  #b1c516;
+    --c:  #c51616;
   }

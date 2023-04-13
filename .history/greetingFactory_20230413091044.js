@@ -54,7 +54,7 @@ function greetingFactory() {
 
   function callAlert() {
     if (!getRadioValue() && !newName) {
-    newAlert = "please select language and fill in your name"
+    newAlert = "please select language and fill in name your name"
    
     }
    else if (!newName) {
@@ -67,16 +67,7 @@ function greetingFactory() {
   }
 
   function getAlert() {
-    return newAlert
-  }
-
-  function clear() {
-     newName = "";
-     newLanguage = "";
-     newAlert = "";
-     greetCount = 0;
-     greetedObj = {};
-     radioItem = ""
+    alert(newAlert)
   }
 
   return {
@@ -88,7 +79,6 @@ function greetingFactory() {
     callNameCount,
     getNameCount,
     callAlert,
-    getAlert,
-    clear
+    getAlert
   };
 }

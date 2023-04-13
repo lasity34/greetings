@@ -70,15 +70,6 @@ function greetingFactory() {
     return newAlert
   }
 
-  function clear() {
-     newName = "";
-     newLanguage = "";
-     newAlert = "";
-     greetCount = 0;
-     greetedObj = {};
-     radioItem = ""
-  }
-
   return {
     setName,
     callName,
@@ -88,7 +79,6 @@ function greetingFactory() {
     callNameCount,
     getNameCount,
     callAlert,
-    getAlert,
-    clear
+    getAlert
   };
 }

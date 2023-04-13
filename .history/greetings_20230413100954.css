@@ -3,7 +3,7 @@ html {
     font-family: 'Mynerve', cursive;
     background-color: rgb(255, 245, 238);
     color: rgb(222, 213, 213);
-    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(./images/blue-teal-brush-stroke-textured-background\(1\).jpg);
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)), url(./images/blue-teal-brush-stroke-textured-background\(1\).jpg);
     background-position: center;
     background-size: cover;
     font-size: 1.4rem;

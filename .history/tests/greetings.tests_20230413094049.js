@@ -133,7 +133,6 @@ describe("Test clear button then values", function() {
     assert.equal(2, greetingTest.getNameCount())
 
     greetTest.clear()
-    
     assert.equal(0, greetTest.getNameCount())
   })
 })
