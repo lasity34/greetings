@@ -18,7 +18,7 @@ function greeting() {
  
   if (checkedRadioBtnElement && greetingVal) {
     const languageItem = checkedRadioBtnElement.value;
-    errorDisplay.classList.remove("message")
+    
     greetIntance.setName(greetingVal);
     greetIntance.setLanguage(languageItem);
     greetIntance.callNameCount();
@@ -26,19 +26,16 @@ function greeting() {
     let numGreetings = greetIntance.getNameCount();
     sumCount = numGreetings;
     numCountDisplay.innerHTML = numGreetings;
-    errorDisplay.innerHTML = ""
   }
-  if (!checkedRadioBtnElement || !greetingVal) {
-    greetIntance.setName(greetingVal);
-    greetIntance.setRadioValue(checkedRadioBtnElement);
-    greetIntance.callAlert()
-    errorDisplay.innerHTML = greetIntance.getAlert()
-    errorDisplay.classList.add("message")
-    localStorage.setItem("numItem", JSON.stringify(sumCount));
   
-  }
+  greetIntance.setName(greetingVal);
+  greetIntance.setRadioValue(checkedRadioBtnElement);
+  greetIntance.callAlert()
+  errorDisplay.innerHTML = greetIntance.getAlert()
+  
+  localStorage.setItem("numItem", JSON.stringify(sumCount));
+
   resetGreeting();
- 
 }
 
 if (localStorage.getItem("numItem")) {

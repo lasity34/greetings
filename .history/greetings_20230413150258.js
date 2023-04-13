@@ -26,7 +26,6 @@ function greeting() {
     let numGreetings = greetIntance.getNameCount();
     sumCount = numGreetings;
     numCountDisplay.innerHTML = numGreetings;
-    errorDisplay.innerHTML = ""
   }
   if (!checkedRadioBtnElement || !greetingVal) {
     greetIntance.setName(greetingVal);
@@ -36,8 +35,8 @@ function greeting() {
     errorDisplay.classList.add("message")
     localStorage.setItem("numItem", JSON.stringify(sumCount));
   
+    resetGreeting();
   }
-  resetGreeting();
  
 }
 

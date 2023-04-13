@@ -8,7 +8,7 @@
       href="https://fonts.googleapis.com/css2?family=Euphoria+Script&family=Mynerve&family=Schoolbell&display=swap"
       rel="stylesheet"
     />
-
+    
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="./greetings.css" rel="stylesheet" type="text/css" />
@@ -19,7 +19,11 @@
       <h1 id="title">Greeting</h1>
 
       <div class="inputNameContainer">
-        <div class="error"></div>
+        <div class="error message">
+          
+         
+          <p class="error"></p>
+        </div>
         <label for="nameInput">Name</label>
         <input
           type="text"
@@ -27,12 +31,14 @@
           class="inputName"
           placeholder="put your name here..."
           name="name"
+          
         />
         <h2 class="numGreetings">
           No of Greetings:<span class="numCount"></span>
         </h2>
       </div>
       <div class="radio_container">
+      
         <input
           type="radio"
           id="english"
@@ -66,9 +72,7 @@
       </div>
       <section>
         <button class="clearBtn">Clear</button>
-        <a href="./tests.html" target="_blank"
-          ><button class="unit_btn">Unit Tests</button></a
-        >
+        <a href="./tests.html" target="_blank" ><button class="unit_btn">Unit Tests</button></a>
       </section>
     </main>
   </body>

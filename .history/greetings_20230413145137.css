@@ -166,5 +166,5 @@ button {
   
 
 
-
+div.message.error:before{content:'\f00d';}
   div.message.error{background: #C43;}

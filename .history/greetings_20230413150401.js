@@ -36,8 +36,8 @@ function greeting() {
     errorDisplay.classList.add("message")
     localStorage.setItem("numItem", JSON.stringify(sumCount));
   
+    resetGreeting();
   }
-  resetGreeting();
  
 }
 

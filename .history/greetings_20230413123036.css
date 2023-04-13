@@ -14,10 +14,6 @@ main {
    
 }
 
-#title {
-  margin-bottom: 0;
-}
-
 
 /* input */
 
@@ -26,7 +22,7 @@ label {
     font-weight: 600;
     font-size: 1.2rem;
     margin-right: .5em;
-   
+    
 }
 
 .inputNameContainer {
@@ -50,7 +46,6 @@ label {
     padding: 0.5em 1em;
     text-indent: 2px;
     font-size: 1rem;
-    font-style: italic;
 }
 
 /* button */
@@ -107,13 +102,8 @@ button {
     margin-bottom: 2em;
   }
 
-  .radio_container label {
-    color: #A799B7
-  }
-
   .language {
     margin-right: 1em;
-    
   }
 
   .btn_container {
@@ -121,9 +111,7 @@ button {
     justify-content: center;
   }
 
-  .greetBtn {
-    width: 120%;
-  }
+
 
   .clearBtn {
     --c:  #c51616;
@@ -133,38 +121,11 @@ button {
   .unit_btn {
     --c:  #b1c516;
   }
-/* 
+
   .error {
-    color: rgb(227, 198, 198);
+    color: rgb(155, 23, 23);
     font-size: 1.4rem;
     padding: 0;
      text-shadow: 2px 2px 5px rgba(207, 196, 196, 0.25);
     
-  } */
-
-
-  
-  div.message {
-    position: relative;
-    padding: 10px;
-    
-    margin: 30px 10px;
-    box-shadow:0 2px 5px rgba(0,0,0,.3);
-    background: #BBB;
-    color: #FFF;
-    
-    -webkit-transition: all .5s ease;
-       -moz-transition: all .5s ease;
-        -ms-transition: all .5s ease;
-         -o-transition: all .5s ease;
-            transition: all .5s ease;
   }
-  div.message:hover{
-    box-shadow: 0 15px 20px rgba(10,0,10,.3);
-    -webkit-filter: brightness(110%);
-  }
-  
-
-
-
-  div.message.error{background: #C43;}

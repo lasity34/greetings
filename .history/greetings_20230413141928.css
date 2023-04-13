@@ -1,0 +1,353 @@
+
+html {
+    font-family: 'Mynerve', cursive;
+    background-color: rgb(255, 245, 238);
+    color: rgb(222, 213, 213);
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(./images/blue-teal-brush-stroke-textured-background\(1\).jpg);
+    background-position: center;
+    background-size: cover;
+    font-size: 1.4rem;
+}
+
+main {
+    text-align: center;
+   
+}
+
+#title {
+  margin-bottom: 0;
+}
+
+
+/* input */
+
+
+label {
+    font-weight: 600;
+    font-size: 1.2rem;
+    margin-right: .5em;
+   
+}
+
+.inputNameContainer {
+    padding:  0.5em;
+    padding-bottom: 0;
+    margin-right: 1em;
+ 
+    
+}
+
+.numGreetings {
+    text-align: center;
+    padding: 0.5em 0;
+}
+
+.inputNameContainer
+
+.inputName {
+    border-radius: 10px;
+    height: 25px;
+    padding: 0.5em 1em;
+    text-indent: 2px;
+    font-size: 1rem;
+    font-style: italic;
+}
+
+/* button */
+button {
+    --c:  #229091; /* the color*/
+    
+    box-shadow: 0 0 0 .1em inset var(--c); 
+    --_g: linear-gradient(var(--c) 0 0) no-repeat;
+    background: 
+      var(--_g) calc(var(--_p,0%) - 100%) 0%,
+      var(--_g) calc(200% - var(--_p,0%)) 0%,
+      var(--_g) calc(var(--_p,0%) - 100%) 100%,
+      var(--_g) calc(200% - var(--_p,0%)) 100%;
+    background-size: 50.5% calc(var(--_p,0%)/2 + .5%);
+    outline-offset: .1em;
+    transition: background-size .4s, background-position 0s .4s;
+  }
+  button:hover {
+    --_p: 100%;
+    transition: background-position .4s, background-size 0s;
+  }
+  button:active {
+    box-shadow: 0 0 9e9q inset #0009; 
+    background-color: var(--c);
+    color: #fff;
+  }
+
+  button {
+    font-family: system-ui, sans-serif;
+    font-size: 1.2rem;
+    cursor: pointer;
+    padding: .1em .6em;
+    font-weight: bold;  
+    border: none;
+    border-radius: 2%;
+    color: rgb(196, 199, 201);
+  }
+
+  .btn_container {
+    margin-top: 1em;
+  }
+
+  .btn_container p {
+    font-size: 2rem;
+  }
+
+  .greetingDisplay {
+    text-transform: capitalize;
+    font-size: 1.8rem;
+    text-align: center;
+  }
+
+  .radio_container {
+    margin-bottom: 2em;
+  }
+
+  .radio_container label {
+    color: #A799B7
+  }
+
+  .language {
+    margin-right: 1em;
+    
+  }
+
+  .btn_container {
+    display: flex;
+    justify-content: center;
+  }
+
+  .greetBtn {
+    width: 120%;
+  }
+
+  .clearBtn {
+    --c:  #c51616;
+    margin-left: 1em;
+  }
+
+  .unit_btn {
+    --c:  #b1c516;
+  }
+
+  .error {
+    color: rgb(227, 198, 198);
+    font-size: 1.4rem;
+    padding: 0;
+     text-shadow: 2px 2px 5px rgba(207, 196, 196, 0.25);
+    
+  }
+
+
+  
+.alert>.start-icon {
+  margin-right: 0;
+  min-width: 20px;
+  text-align: center;
+}
+
+.alert>.start-icon {
+  margin-right: 5px;
+}
+
+.greencross
+{
+font-size:18px;
+    color: #25ff0b;
+  text-shadow: none;
+}
+
+.alert-simple.alert-success
+{
+border: 1px solid rgba(36, 241, 6, 0.46);
+  background-color: rgba(7, 149, 66, 0.12156862745098039);
+  box-shadow: 0px 0px 2px #259c08;
+  color: #0ad406;
+text-shadow: 2px 1px #00040a;
+transition:0.5s;
+cursor:pointer;
+}
+.alert-success:hover{
+background-color: rgba(7, 149, 66, 0.35);
+transition:0.5s;
+}
+.alert-simple.alert-info
+{
+border: 1px solid rgba(6, 44, 241, 0.46);
+  background-color: rgba(7, 73, 149, 0.12156862745098039);
+  box-shadow: 0px 0px 2px #0396ff;
+  color: #0396ff;
+text-shadow: 2px 1px #00040a;
+transition:0.5s;
+cursor:pointer;
+}
+
+.alert-info:hover
+{
+background-color: rgba(7, 73, 149, 0.35);
+transition:0.5s;
+}
+
+.blue-cross
+{
+font-size: 18px;
+  color: #0bd2ff;
+  text-shadow: none;
+}
+
+.alert-simple.alert-warning
+{
+    border: 1px solid rgba(241, 142, 6, 0.81);
+  background-color: rgba(220, 128, 1, 0.16);
+  box-shadow: 0px 0px 2px #ffb103;
+  color: #ffb103;
+  text-shadow: 2px 1px #00040a;
+transition:0.5s;
+cursor:pointer;
+}
+
+.alert-warning:hover{
+background-color: rgba(220, 128, 1, 0.33);
+transition:0.5s;
+}
+
+.warning
+{
+    font-size: 18px;
+  color: #ffb40b;
+  text-shadow: none;
+}
+
+.alert-simple.alert-danger
+{
+border: 1px solid rgba(241, 6, 6, 0.81);
+  background-color: rgba(220, 17, 1, 0.16);
+  box-shadow: 0px 0px 2px #ff0303;
+  color: #ff0303;
+  text-shadow: 2px 1px #00040a;
+transition:0.5s;
+cursor:pointer;
+}
+
+.alert-danger:hover
+{
+   background-color: rgba(220, 17, 1, 0.33);
+transition:0.5s;
+}
+
+.danger
+{
+    font-size: 18px;
+  color: #ff0303;
+  text-shadow: none;
+}
+
+.alert-simple.alert-primary
+{
+border: 1px solid rgba(6, 241, 226, 0.81);
+  background-color: rgba(1, 204, 220, 0.16);
+  box-shadow: 0px 0px 2px #03fff5;
+  color: #03d0ff;
+  text-shadow: 2px 1px #00040a;
+transition:0.5s;
+cursor:pointer;
+}
+
+.alert-primary:hover{
+background-color: rgba(1, 204, 220, 0.33);
+ transition:0.5s;
+}
+
+.alertprimary
+{
+    font-size: 18px;
+  color: #03d0ff;
+  text-shadow: none;
+}
+
+.square_box {
+  position: absolute;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+  border-top-left-radius: 45px;
+  opacity: 0.302;
+}
+
+.square_box.box_three {
+  background-image: -moz-linear-gradient(-90deg, #290a59 0%, #3d57f4 100%);
+  background-image: -webkit-linear-gradient(-90deg, #290a59 0%, #3d57f4 100%);
+  background-image: -ms-linear-gradient(-90deg, #290a59 0%, #3d57f4 100%);
+  opacity: 0.059;
+  left: -80px;
+  top: -60px;
+  width: 500px;
+  height: 500px;
+  border-radius: 45px;
+}
+
+.square_box.box_four {
+  background-image: -moz-linear-gradient(-90deg, #290a59 0%, #3d57f4 100%);
+  background-image: -webkit-linear-gradient(-90deg, #290a59 0%, #3d57f4 100%);
+  background-image: -ms-linear-gradient(-90deg, #290a59 0%, #3d57f4 100%);
+  opacity: 0.059;
+  left: 150px;
+  top: -25px;
+  width: 550px;
+  height: 550px;
+  border-radius: 45px;
+}
+
+.alert:before {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: calc(100% - 44px);
+  border-left: 1px solid;
+  border-right: 2px solid;
+  border-bottom-right-radius: 3px;
+  border-top-right-radius: 3px;
+  left: 0;
+  top: 50%;
+  transform: translate(0,-50%);
+    height: 20px;
+}
+
+.fa-times
+{
+-webkit-animation: blink-1 2s infinite both;
+        animation: blink-1 2s infinite both;
+}
+
+
+/**
+* ----------------------------------------
+* animation blink-1
+* ----------------------------------------
+*/
+@-webkit-keyframes blink-1 {
+0%,
+50%,
+100% {
+  opacity: 1;
+}
+25%,
+75% {
+  opacity: 0;
+}
+}
+@keyframes blink-1 {
+0%,
+50%,
+100% {
+  opacity: 1;
+}
+25%,
+75% {
+  opacity: 0;
+}
+}

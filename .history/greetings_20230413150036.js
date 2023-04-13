@@ -26,19 +26,16 @@ function greeting() {
     let numGreetings = greetIntance.getNameCount();
     sumCount = numGreetings;
     numCountDisplay.innerHTML = numGreetings;
-    errorDisplay.innerHTML = ""
   }
-  if (!checkedRadioBtnElement || !greetingVal) {
-    greetIntance.setName(greetingVal);
-    greetIntance.setRadioValue(checkedRadioBtnElement);
-    greetIntance.callAlert()
-    errorDisplay.innerHTML = greetIntance.getAlert()
-    errorDisplay.classList.add("message")
-    localStorage.setItem("numItem", JSON.stringify(sumCount));
   
-  }
+  greetIntance.setName(greetingVal);
+  greetIntance.setRadioValue(checkedRadioBtnElement);
+  greetIntance.callAlert()
+  errorDisplay.innerHTML = greetIntance.getAlert()
+  errorDisplay.classList.add("message")
+  localStorage.setItem("numItem", JSON.stringify(sumCount));
+
   resetGreeting();
- 
 }
 
 if (localStorage.getItem("numItem")) {
