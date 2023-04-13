@@ -4,7 +4,7 @@ function greetingFactory() {
   let newAlert = "";
   let greetCount = 0;
   let greetedObj = {};
-  let radioItem = "";
+  let radioItem = ""
 
   function setName(name) {
     newName = name;
@@ -13,6 +13,8 @@ function greetingFactory() {
   function callName() {
     return `hello, ${newName}`;
   }
+
+
 
   function setLanguage(language) {
     newLanguage = language;
@@ -30,12 +32,12 @@ function greetingFactory() {
     }
   }
 
-  function setRadioValue(radio) {
-    radioItem = radio;
+ function setRadioValue(radio) {
+    radioItem = radio
   }
 
   function getRadioValue() {
-    return radioItem;
+    return radioItem
   }
 
   function callNameCount() {
@@ -51,26 +53,32 @@ function greetingFactory() {
   }
 
   function callAlert() {
+    alert(getRadioValue())
     if (!getRadioValue() && !newName) {
-      newAlert = "please select language and fill in your name";
-    } else if (!newName) {
-      newAlert = "please fill in your name";
+    newAlert = "please select language and fill in your name"
+   
+    }
+   else if (!newName) {
+    newAlert =  "please fill in your name"
+    
     } else if (!getRadioValue()) {
-      newAlert = "please select language";
+    newAlert =  "please select language"
+    
     }
   }
 
   function getAlert() {
-    return newAlert;
+    return newAlert
   }
 
+
   function clear() {
-    newName = "";
-    newLanguage = "";
-    newAlert = "";
-    greetCount = 0;
-    greetedObj = {};
-    radioItem = "";
+     newName = "";
+     newLanguage = "";
+     newAlert = "";
+     greetCount = 0;
+     greetedObj = {};
+     radioItem = ""
   }
 
   return {
@@ -83,6 +91,6 @@ function greetingFactory() {
     getNameCount,
     callAlert,
     getAlert,
-    clear,
+    clear
   };
 }

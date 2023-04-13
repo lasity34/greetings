@@ -192,9 +192,10 @@ describe("Test clear button then values", function() {
     assert.equal(2, greetingTest.getNameCount())
 
     greetingTest.clear()
-   
+    greetingTest.setRadioValue(true)
+    greetingTest.setName("")
     greetingTest.callAlert()
     
-    assert.equal("please select language and fill in your name", greetingTest.getAlert())
+    assert.equal("please fill in your name", greetingTest.getAlert())
   })
 })

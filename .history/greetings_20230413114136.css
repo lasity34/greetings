@@ -14,7 +14,6 @@ main {
    
 }
 
-
 /* input */
 
 
@@ -26,7 +25,7 @@ label {
 }
 
 .inputNameContainer {
-    padding:  0.5em;
+    padding: 1.5em 0.5em;
     padding-bottom: 0;
     margin-right: 1em;
  
@@ -123,7 +122,5 @@ button {
   }
 
   .error {
-    color: rgb(190, 133, 133);
-    font-size: 1.4rem;
-    padding: 0;
+    color: red
   }

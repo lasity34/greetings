@@ -52,7 +52,6 @@ function clear() {
   sumCount = 0;
   numCountDisplay.innerHTML = sumCount;
   greetingDisplay.innerHTML = "";
-  errorDisplay.innerHTML = ""
   resetGreeting();
 
   const radioBtns = document.querySelector("input[name='language']:checked");

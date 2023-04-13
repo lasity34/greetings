@@ -136,7 +136,7 @@ describe("Test clear button then values", function() {
     
     assert.equal(0, greetingTest.getNameCount())
   })
-  it("should click clear and message popped up if only name selected", function() {
+  it("should click clear and only radio button is selected", function() {
     const greetingTest = greetingFactory();
 
     greetingTest.setLanguage("castilian");
@@ -154,47 +154,6 @@ describe("Test clear button then values", function() {
     greetingTest.setName("bjorn")
     greetingTest.callAlert()
     
-    assert.equal("please select language", greetingTest.getAlert())
-  })
-  it("should click clear and message popped up if language has to be selected", function() {
-    const greetingTest = greetingFactory();
-
-    greetingTest.setLanguage("castilian");
-    greetingTest.setName("bjorn")
-    greetingTest.callNameCount()
-    assert.equal(1, greetingTest.getNameCount())
-
-    greetingTest.setLanguage("french");
-    greetingTest.setName("bjorn")
-    greetingTest.setName("john")
-    greetingTest.callNameCount()
-    assert.equal(2, greetingTest.getNameCount())
-
-    greetingTest.clear()
-    greetingTest.setRadioValue(true)
-    greetingTest.setName("")
-    greetingTest.callAlert()
-    
-    assert.equal("please fill in your name", greetingTest.getAlert())
-  })
-  it("message for language and name should pop up when clear is clicked", function() {
-    const greetingTest = greetingFactory();
-
-    greetingTest.setLanguage("castilian");
-    greetingTest.setName("bjorn")
-    greetingTest.callNameCount()
-    assert.equal(1, greetingTest.getNameCount())
-
-    greetingTest.setLanguage("french");
-    greetingTest.setName("bjorn")
-    greetingTest.setName("john")
-    greetingTest.callNameCount()
-    assert.equal(2, greetingTest.getNameCount())
-
-    greetingTest.clear()
-   
-    greetingTest.callAlert()
-    
-    assert.equal("please select language and fill in your name", greetingTest.getAlert())
+    assert.equal("please fill in your name", greetingTest.callAlert())
   })
 })

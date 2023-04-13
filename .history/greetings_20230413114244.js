@@ -30,7 +30,7 @@ function greeting() {
   greetIntance.setName(greetingVal);
   greetIntance.setRadioValue(checkedRadioBtnElement);
   greetIntance.callAlert()
-  errorDisplay.innerHTML = greetIntance.getAlert()
+  alert(greetIntance.getAlert())
 
   localStorage.setItem("numItem", JSON.stringify(sumCount));
 
@@ -52,7 +52,6 @@ function clear() {
   sumCount = 0;
   numCountDisplay.innerHTML = sumCount;
   greetingDisplay.innerHTML = "";
-  errorDisplay.innerHTML = ""
   resetGreeting();
 
   const radioBtns = document.querySelector("input[name='language']:checked");
