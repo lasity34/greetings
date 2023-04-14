@@ -19,6 +19,10 @@ function greetingFactory() {
   }
 
   function getLanguage() {
+    return newLanguage;
+  }
+
+  function getLanguage() {
     if (newLanguage === "english") {
       return `hello, ${newName}`;
     }
@@ -31,7 +35,7 @@ function greetingFactory() {
   }
 
   function setRadioValue(radio) {
-    console.log(radioItem)
+    console.log(radioItem);
     radioItem = radio;
   }
 
@@ -52,13 +56,11 @@ function greetingFactory() {
   }
 
   function callAlert() {
-   
-    if (!getRadioValue() && !newName) {
+    if (!getLanguage() && !newName) {
       newAlert = "please select language and fill in your name";
-      
     } else if (!newName) {
       newAlert = "please fill in your name";
-    } else if (!getRadioValue()) {
+    } else if (!getLanguage()) {
       newAlert = "please select language";
     }
   }

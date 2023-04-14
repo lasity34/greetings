@@ -17,8 +17,10 @@ function greeting() {
   );
   greetIntance.setName(greetingVal);
   greetIntance.setRadioValue(checkedRadioBtnElement)
-  
   if (!checkedRadioBtnElement || !greetingVal) {
+   
+   
+   
     greetIntance.callAlert()
     errorDisplay.innerHTML = greetIntance.getAlert()
     errorDisplay.classList.add("message")
@@ -29,7 +31,7 @@ function greeting() {
     const languageItem = checkedRadioBtnElement.value;
     errorDisplay.classList.remove("message")
   
-    greetIntance.setLanguage(languageItem);
+  
     greetIntance.callNameCount();
     greetingDisplay.innerHTML = greetIntance.getLanguage();
     let numGreetings = greetIntance.getNameCount();

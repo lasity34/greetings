@@ -31,7 +31,6 @@ function greetingFactory() {
   }
 
   function setRadioValue(radio) {
-    console.log(radioItem)
     radioItem = radio;
   }
 
@@ -52,13 +51,12 @@ function greetingFactory() {
   }
 
   function callAlert() {
-   
-    if (!getRadioValue() && !newName) {
+    if (!newLanguage && !newName) {
       newAlert = "please select language and fill in your name";
       
     } else if (!newName) {
       newAlert = "please fill in your name";
-    } else if (!getRadioValue()) {
+    } else if (!newLanguage) {
       newAlert = "please select language";
     }
   }

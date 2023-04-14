@@ -16,9 +16,10 @@ function greeting() {
     "input[name='language']:checked"
   );
   greetIntance.setName(greetingVal);
-  greetIntance.setRadioValue(checkedRadioBtnElement)
+
   
   if (!checkedRadioBtnElement || !greetingVal) {
+   
     greetIntance.callAlert()
     errorDisplay.innerHTML = greetIntance.getAlert()
     errorDisplay.classList.add("message")

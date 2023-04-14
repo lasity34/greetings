@@ -52,7 +52,6 @@ function greetingFactory() {
   }
 
   function callAlert() {
-   
     if (!getRadioValue() && !newName) {
       newAlert = "please select language and fill in your name";
       

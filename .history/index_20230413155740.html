@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Euphoria+Script&family=Mynerve&family=Schoolbell&display=swap"
+      rel="stylesheet"
+    />
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="./greetings.css" rel="stylesheet" type="text/css" />
+    <title>Greetings</title>
+  </head>
+  <body>
+    <main>
+      <h1 id="title">Greeting</h1>
+
+      <div class="inputNameContainer">
+        <div class="error"></div>
+        <label for="nameInput">Name</label>
+        <input
+          type="text"
+          id="nameInput"
+          class="inputName"
+          placeholder="put your name here..."
+          name="name"
+        />
+        <h2 class="numGreetings">
+          No of Greetings:<span class="numCount"></span>
+        </h2>
+      </div>
+      <div class="radio_container">
+        <input
+          type="radio"
+          id="english"
+          class="language"
+          name="language"
+          value="english"
+        />
+        <label for="english">English</label>
+        <input
+          type="radio"
+          class="language"
+          id="french"
+          name="language"
+          value="french"
+        />
+        <label for="french">French</label>
+        <input
+          type="radio"
+          class="language"
+          id="castilian"
+          name="language"
+          value="castilian"
+        />
+        <label for="castilian">Castilian</label>
+      </div>
+      <p class="greetingDisplay"></p>
+      <div class="btn_container">
+        <div class="greetBtn_container">
+          <button class="greetBtn">Greet me</button>
+        </div>
+      </div>
+      <section>
+        <button class="clearBtn">Clear</button>
+        <a href="./tests.html" target="_blank"
+          ><button class="unit_btn">Unit Tests</button></a
+        >
+      </section>
+    </main>
+  </body>
+  <script src="./greetingFactory.js"></script>
+  <script src="./greetings.js" charset="utf-8"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/particlesjs/2.2.3/particles.min.js"></script>
+</html>

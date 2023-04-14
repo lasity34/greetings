@@ -17,8 +17,10 @@ function greeting() {
   );
   greetIntance.setName(greetingVal);
   greetIntance.setRadioValue(checkedRadioBtnElement)
-  
   if (!checkedRadioBtnElement || !greetingVal) {
+   
+   
+   
     greetIntance.callAlert()
     errorDisplay.innerHTML = greetIntance.getAlert()
     errorDisplay.classList.add("message")

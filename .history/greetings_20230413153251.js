@@ -15,10 +15,10 @@ function greeting() {
   const checkedRadioBtnElement = document.querySelector(
     "input[name='language']:checked"
   );
-  greetIntance.setName(greetingVal);
-  greetIntance.setRadioValue(checkedRadioBtnElement)
-  
+ 
   if (!checkedRadioBtnElement || !greetingVal) {
+    greetIntance.setName(greetingVal);
+    greetIntance.setLanguage(languageItem);
     greetIntance.callAlert()
     errorDisplay.innerHTML = greetIntance.getAlert()
     errorDisplay.classList.add("message")
@@ -28,7 +28,7 @@ function greeting() {
   else if (checkedRadioBtnElement && greetingVal) {
     const languageItem = checkedRadioBtnElement.value;
     errorDisplay.classList.remove("message")
-  
+    greetIntance.setName(greetingVal);
     greetIntance.setLanguage(languageItem);
     greetIntance.callNameCount();
     greetingDisplay.innerHTML = greetIntance.getLanguage();
