@@ -9,15 +9,13 @@ let greetIntance = greetingFactory();
 let sumCount = 0;
 let namesGreeted = {};
 
-// radio & greeting true & greeting[newName] = 0
-
 function greeting() {
   const greetingVal = greetingInput.value;
   const checkedRadioBtnElement = document.querySelector(
     "input[name='language']:checked"
   );
   const radioBol = checkedRadioBtnElement ? true : false;
-
+  console.log(radioBol)
   greetIntance.setName(greetingVal);
   greetIntance.setRadioValue(radioBol);
 
@@ -25,33 +23,25 @@ function greeting() {
     greetIntance.callAlert();
     errorDisplay.innerHTML = greetIntance.getAlert();
     errorDisplay.classList.add("message");
+    
   } else if (checkedRadioBtnElement && greetingVal) {
     const languageItem = checkedRadioBtnElement.value;
+    errorDisplay.classList.remove("message");
     errorDisplay.innerHTML = "";
     greetIntance.setLanguage(languageItem);
-    errorDisplay.classList.remove("message"); 
-
-
     greetIntance.callNameError()
-    if(greetIntance.getAlert() === "username already exists") {
-      errorDisplay.innerHTML = greetIntance.getAlert();
-      errorDisplay.classList.add("message"); 
-    }
-
+    errorDisplay.innerHTML = greetIntance.getAlert()
+    errorDisplay.classList.add("message");
     greetIntance.callNameCount();
     greetingDisplay.innerHTML = greetIntance.getLanguage();
     let numGreetings = greetIntance.getNameCount();
     sumCount = numGreetings;
     localStorage.setItem("numItem", JSON.stringify(sumCount));
     numCountDisplay.innerHTML = numGreetings;
-
-  
+    
   }
   resetGreeting();
 }
-
-
-
 
 if (localStorage.getItem("numItem")) {
   sumCount = Number(localStorage.getItem("numItem"));
@@ -63,6 +53,7 @@ function resetGreeting() {
 }
 
 function clear() {
+ 
   localStorage.clear();
   namesGreeted = {};
   sumCount = 0;

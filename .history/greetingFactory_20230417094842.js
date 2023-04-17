@@ -8,13 +8,11 @@ function greetingFactory() {
 
   function setName(name) {
     newName = name;
-   
   }
 
   function callName() {
     return `hello, ${newName}`;
   }
-
 
   function setLanguage(language) {
     newLanguage = language;
@@ -28,13 +26,9 @@ function greetingFactory() {
       return `bonjour, ${newName}`;
     }
     if (newLanguage === "castilian") {
-      console.log(newName)
       return `Saludo, ${newName}`;
-
     }
   }
-
-
 
   function setRadioValue(radio) {
     radioItem = radio;
@@ -49,22 +43,15 @@ function greetingFactory() {
       greetCount++;
 
       greetedObj[newName] = 0;
-
+     
     }
   }
 
- 
   function callNameError() {
     if (greetedObj[newName] === 0) {
       newAlert = "username already exists";
-      
-    } else {
-      newAlert = ""
     }
-    console.log(newAlert)
   }
-
-
 
   function getNameCount() {
     return greetCount;
@@ -96,13 +83,6 @@ function greetingFactory() {
     radioItem = "";
   }
 
-  function getNameObj() {
-    
-    return greetedObj
-  }
-
-
-
   return {
     setName,
     callName,
@@ -114,7 +94,6 @@ function greetingFactory() {
     callAlert,
     getAlert,
     clear,
-    callNameError,
-    getNameObj
+    callNameError
   };
 }

@@ -34,7 +34,7 @@ function greetingFactory() {
     }
   }
 
-
+  console.log(newLanguage)
 
   function setRadioValue(radio) {
     radioItem = radio;
@@ -55,13 +55,10 @@ function greetingFactory() {
 
  
   function callNameError() {
-    if (greetedObj[newName] === 0) {
+    if (Object.keys(greetedObj).includes(newName) ) {
       newAlert = "username already exists";
-      
-    } else {
-      newAlert = ""
     }
-    console.log(newAlert)
+    console.log(newName)
   }
 
 

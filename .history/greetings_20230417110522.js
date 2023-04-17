@@ -33,10 +33,7 @@ function greeting() {
 
 
     greetIntance.callNameError()
-    if(greetIntance.getAlert() === "username already exists") {
-      errorDisplay.innerHTML = greetIntance.getAlert();
-      errorDisplay.classList.add("message"); 
-    }
+    errorDisplay.innerHTML = greetIntance.getAlert();
 
     greetIntance.callNameCount();
     greetingDisplay.innerHTML = greetIntance.getLanguage();
@@ -49,7 +46,6 @@ function greeting() {
   }
   resetGreeting();
 }
-
 
 
 

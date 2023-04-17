@@ -28,13 +28,9 @@ function greetingFactory() {
       return `bonjour, ${newName}`;
     }
     if (newLanguage === "castilian") {
-      console.log(newName)
       return `Saludo, ${newName}`;
-
     }
   }
-
-
 
   function setRadioValue(radio) {
     radioItem = radio;
@@ -49,19 +45,15 @@ function greetingFactory() {
       greetCount++;
 
       greetedObj[newName] = 0;
-
+    //  console.log(greetedObj)
     }
   }
 
  
   function callNameError() {
-    if (greetedObj[newName] === 0) {
+    if (Object.keys(greetedObj).includes(newName) ) {
       newAlert = "username already exists";
-      
-    } else {
-      newAlert = ""
     }
-    console.log(newAlert)
   }
 
 

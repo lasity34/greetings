@@ -32,11 +32,8 @@ function greeting() {
     errorDisplay.classList.remove("message"); 
 
 
-    greetIntance.callNameError()
-    if(greetIntance.getAlert() === "username already exists") {
-      errorDisplay.innerHTML = greetIntance.getAlert();
-      errorDisplay.classList.add("message"); 
-    }
+    // greetIntance.callNameError()
+    // errorDisplay.innerHTML = greetIntance.getAlert();
 
     greetIntance.callNameCount();
     greetingDisplay.innerHTML = greetIntance.getLanguage();
@@ -45,12 +42,19 @@ function greeting() {
     localStorage.setItem("numItem", JSON.stringify(sumCount));
     numCountDisplay.innerHTML = numGreetings;
 
+    // if (greetIntance.callNameError()) {
+    //   errorDisplay.classList.add("message");
+    //   greetIntance.getAlert()
+    // }
   
   }
   resetGreeting();
 }
 
-
+if (greetIntance.callNameError()) {
+  errorDisplay.classList.add("message");
+  greetIntance.getAlert()
+}
 
 
 if (localStorage.getItem("numItem")) {

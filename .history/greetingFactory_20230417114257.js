@@ -57,11 +57,9 @@ function greetingFactory() {
   function callNameError() {
     if (greetedObj[newName] === 0) {
       newAlert = "username already exists";
-      
-    } else {
-      newAlert = ""
+      console.log(newAlert)
     }
-    console.log(newAlert)
+    
   }
 
 

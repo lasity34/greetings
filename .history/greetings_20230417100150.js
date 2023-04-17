@@ -17,38 +17,38 @@ function greeting() {
     "input[name='language']:checked"
   );
   const radioBol = checkedRadioBtnElement ? true : false;
-
+ 
   greetIntance.setName(greetingVal);
   greetIntance.setRadioValue(radioBol);
 
   if (!checkedRadioBtnElement || !greetingVal) {
+    console.log(greetIntance.callAlert())
     greetIntance.callAlert();
     errorDisplay.innerHTML = greetIntance.getAlert();
     errorDisplay.classList.add("message");
+    
   } else if (checkedRadioBtnElement && greetingVal) {
     const languageItem = checkedRadioBtnElement.value;
+    errorDisplay.classList.remove("message");
     errorDisplay.innerHTML = "";
     greetIntance.setLanguage(languageItem);
-    errorDisplay.classList.remove("message"); 
-
-
     greetIntance.callNameError()
-    if(greetIntance.getAlert() === "username already exists") {
-      errorDisplay.innerHTML = greetIntance.getAlert();
-      errorDisplay.classList.add("message"); 
+   
+    if ( greetIntance.callNameError()) {
+      errorDisplay.innerHTML = greetIntance.getAlert()
+      errorDisplay.classList.add("message");
     }
-
     greetIntance.callNameCount();
     greetingDisplay.innerHTML = greetIntance.getLanguage();
     let numGreetings = greetIntance.getNameCount();
     sumCount = numGreetings;
     localStorage.setItem("numItem", JSON.stringify(sumCount));
     numCountDisplay.innerHTML = numGreetings;
-
-  
-  }
+    
+  } 
   resetGreeting();
 }
+
 
 
 
@@ -63,6 +63,7 @@ function resetGreeting() {
 }
 
 function clear() {
+ 
   localStorage.clear();
   namesGreeted = {};
   sumCount = 0;

@@ -61,7 +61,7 @@ function greetingFactory() {
     } else {
       newAlert = ""
     }
-    console.log(newAlert)
+    
   }
 
 

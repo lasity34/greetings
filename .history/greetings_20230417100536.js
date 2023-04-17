@@ -27,15 +27,15 @@ function greeting() {
     errorDisplay.classList.add("message");
   } else if (checkedRadioBtnElement && greetingVal) {
     const languageItem = checkedRadioBtnElement.value;
+    errorDisplay.classList.remove("message");
     errorDisplay.innerHTML = "";
     greetIntance.setLanguage(languageItem);
-    errorDisplay.classList.remove("message"); 
 
+    greetIntance.callNameError();
+    errorDisplay.innerHTML = greetIntance.getAlert();
+    if (greetIntance.callNameError()) {
 
-    greetIntance.callNameError()
-    if(greetIntance.getAlert() === "username already exists") {
-      errorDisplay.innerHTML = greetIntance.getAlert();
-      errorDisplay.classList.add("message"); 
+      errorDisplay.classList.add("message");
     }
 
     greetIntance.callNameCount();
@@ -44,14 +44,9 @@ function greeting() {
     sumCount = numGreetings;
     localStorage.setItem("numItem", JSON.stringify(sumCount));
     numCountDisplay.innerHTML = numGreetings;
-
-  
   }
   resetGreeting();
 }
-
-
-
 
 if (localStorage.getItem("numItem")) {
   sumCount = Number(localStorage.getItem("numItem"));

@@ -27,29 +27,27 @@ function greeting() {
     errorDisplay.classList.add("message");
   } else if (checkedRadioBtnElement && greetingVal) {
     const languageItem = checkedRadioBtnElement.value;
+
     errorDisplay.innerHTML = "";
     greetIntance.setLanguage(languageItem);
-    errorDisplay.classList.remove("message"); 
-
-
-    greetIntance.callNameError()
-    if(greetIntance.getAlert() === "username already exists") {
-      errorDisplay.innerHTML = greetIntance.getAlert();
-      errorDisplay.classList.add("message"); 
-    }
-
+    errorDisplay.classList.remove("message");
+    
     greetIntance.callNameCount();
     greetingDisplay.innerHTML = greetIntance.getLanguage();
     let numGreetings = greetIntance.getNameCount();
+    
     sumCount = numGreetings;
     localStorage.setItem("numItem", JSON.stringify(sumCount));
     numCountDisplay.innerHTML = numGreetings;
 
-  
+    if (sumCount === numGreetings) {
+      greetIntance.callNameError()
+      errorDisplay.classList.add("message");
+      errorDisplay.innerHTML = greetIntance.getAlert();
+    }
   }
   resetGreeting();
 }
-
 
 
 

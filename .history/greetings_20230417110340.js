@@ -30,14 +30,6 @@ function greeting() {
     errorDisplay.innerHTML = "";
     greetIntance.setLanguage(languageItem);
     errorDisplay.classList.remove("message"); 
-
-
-    greetIntance.callNameError()
-    if(greetIntance.getAlert() === "username already exists") {
-      errorDisplay.innerHTML = greetIntance.getAlert();
-      errorDisplay.classList.add("message"); 
-    }
-
     greetIntance.callNameCount();
     greetingDisplay.innerHTML = greetIntance.getLanguage();
     let numGreetings = greetIntance.getNameCount();
@@ -49,7 +41,6 @@ function greeting() {
   }
   resetGreeting();
 }
-
 
 
 
