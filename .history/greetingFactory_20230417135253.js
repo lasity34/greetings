@@ -30,25 +30,36 @@ function greetingFactory() {
     }
   }
 
+
+
   function callNameCount() {
     if (greetedObj[newName] === undefined && newName && newLanguage) {
       greetCount++;
       greetedObj[newName] = 0;
-     
+      setLocalStorage();
     }
   }
 
   function setLocalStorage() {
     localStorage.setItem("numItem", JSON.stringify(greetCount));
-    console.log(greetCount)
   }
 
   function getLocalStorage() {
-    greetCount = Number(localStorage.getItem("numItem"));
+    greetCount = JSON.parse(localStorage.getItem("numItem"));
   }
 
+  // function callNameError() {
+  //   if (greetedObj[newName] === 0) {
+  //     newAlert = "username already exists";
+  //   } else {
+  //     newAlert = "";
+  //   }
+  // }
 
- 
+  function getNameCount() {
+
+    return greetCount;
+  }
 
   function callAlert() {
     if (!newLanguage && !newName) {
@@ -57,15 +68,10 @@ function greetingFactory() {
       newAlert = "please fill in your name";
     } else if (!newLanguage) {
       newAlert = "please select language";
-    } else if (greetedObj[newName] === 0) {
-      newAlert = "username already exists";
-    } else {
-      newAlert = ""
     }
   }
 
   function getAlert() {
-    console.log(newAlert)
     return newAlert;
   }
 
@@ -77,10 +83,6 @@ function greetingFactory() {
     greetCount = 0;
     greetedObj = {};
     radioItem = "";
-  }
-
-  function getNameCount() {
-    return greetCount;
   }
 
   function getNameObj() {
@@ -99,7 +101,7 @@ function greetingFactory() {
     callAlert,
     getAlert,
     clear,
-   
+    // callNameError,
     getNameObj,
   };
 }

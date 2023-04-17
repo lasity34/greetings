@@ -47,6 +47,13 @@ function greetingFactory() {
     greetCount = Number(localStorage.getItem("numItem"));
   }
 
+  // function callNameError() {
+  //   if (greetedObj[newName] === 0) {
+  //     newAlert = "username already exists";
+  //   } else {
+  //     newAlert = "";
+  //   }
+  // }
 
  
 
@@ -57,15 +64,10 @@ function greetingFactory() {
       newAlert = "please fill in your name";
     } else if (!newLanguage) {
       newAlert = "please select language";
-    } else if (greetedObj[newName] === 0) {
-      newAlert = "username already exists";
-    } else {
-      newAlert = ""
     }
   }
 
   function getAlert() {
-    console.log(newAlert)
     return newAlert;
   }
 
@@ -99,7 +101,7 @@ function greetingFactory() {
     callAlert,
     getAlert,
     clear,
-   
+    // callNameError,
     getNameObj,
   };
 }

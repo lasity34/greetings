@@ -24,7 +24,7 @@ function greeting() {
     errorDisplay.innerHTML = "";
    
     greetIntance.callAlert();
-    if (greetIntance.getAlert()) {
+    if (greetIntance.getAlert() === "username already exists") {
       errorDisplay.innerHTML = greetIntance.getAlert();
       errorDisplay.classList.add("message");
     }

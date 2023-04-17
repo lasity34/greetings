@@ -22,24 +22,24 @@ function greeting() {
     const languageItem = checkedRadioBtnElement.value;
     greetIntance.setLanguage(languageItem);
     errorDisplay.innerHTML = "";
-   
-    greetIntance.callAlert();
-    if (greetIntance.getAlert()) {
-      errorDisplay.innerHTML = greetIntance.getAlert();
-      errorDisplay.classList.add("message");
-    }
     greetIntance.callNameCount();
     greetIntance.setLocalStorage();
-
+    
     numCountDisplay.innerHTML = greetIntance.getNameCount();
     errorDisplay.classList.remove("message");
     greetingInput.value = "";
+    // greetIntance.callNameError();
+    // if (greetIntance.getAlert() === "username already exists") {
+    //   errorDisplay.innerHTML = greetIntance.getAlert();
+    //   errorDisplay.classList.add("message");
+    // }
 
     greetingDisplay.innerHTML = greetIntance.getLanguage();
   }
 }
-greetIntance.getLocalStorage();
+greetIntance.getLocalStorage()
 numCountDisplay.innerHTML = greetIntance.getNameCount();
+
 
 function resetGreeting() {
   greetingInput.value = "";
@@ -48,9 +48,7 @@ function resetGreeting() {
 function clear() {
   greetIntance.clear();
   resetGreeting();
-  greetingDisplay.innerHTML = "";
   numCountDisplay.innerHTML = greetIntance.getNameCount();
-  errorDisplay.innerHTML = greetIntance.getAlert();
   errorDisplay.classList.remove("message");
   const radioBtns = document.querySelectorAll(".language");
   radioBtns.forEach((item) => {

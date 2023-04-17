@@ -99,7 +99,7 @@ function greetingFactory() {
     callAlert,
     getAlert,
     clear,
-   
+    callNameError,
     getNameObj,
   };
 }

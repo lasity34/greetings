@@ -22,9 +22,9 @@ function greeting() {
     const languageItem = checkedRadioBtnElement.value;
     greetIntance.setLanguage(languageItem);
     errorDisplay.innerHTML = "";
-   
+    greetIntance.getAlert()
     greetIntance.callAlert();
-    if (greetIntance.getAlert()) {
+    if (greetIntance.getAlert() === "username already exists") {
       errorDisplay.innerHTML = greetIntance.getAlert();
       errorDisplay.classList.add("message");
     }

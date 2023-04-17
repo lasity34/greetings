@@ -22,35 +22,34 @@ function greeting() {
     const languageItem = checkedRadioBtnElement.value;
     greetIntance.setLanguage(languageItem);
     errorDisplay.innerHTML = "";
-   
-    greetIntance.callAlert();
-    if (greetIntance.getAlert()) {
+    greetIntance.callNameCount();
+    greetIntance.setLocalStorage();
+    errorDisplay.classList.remove("message");
+
+    greetIntance.callNameError();
+    if (greetIntance.getAlert() === "username already exists") {
       errorDisplay.innerHTML = greetIntance.getAlert();
       errorDisplay.classList.add("message");
     }
-    greetIntance.callNameCount();
-    greetIntance.setLocalStorage();
-
-    numCountDisplay.innerHTML = greetIntance.getNameCount();
-    errorDisplay.classList.remove("message");
-    greetingInput.value = "";
 
     greetingDisplay.innerHTML = greetIntance.getLanguage();
   }
+  resetGreeting();
 }
-greetIntance.getLocalStorage();
-numCountDisplay.innerHTML = greetIntance.getNameCount();
+
+
+numCountDisplay.innerHTML = greetIntance.getLocalStorage();
 
 function resetGreeting() {
   greetingInput.value = "";
 }
 
 function clear() {
-  greetIntance.clear();
-  resetGreeting();
+  localStorage.clear();
+
   greetingDisplay.innerHTML = "";
-  numCountDisplay.innerHTML = greetIntance.getNameCount();
-  errorDisplay.innerHTML = greetIntance.getAlert();
+  errorDisplay.innerHTML = "";
+  resetGreeting();
   errorDisplay.classList.remove("message");
   const radioBtns = document.querySelectorAll(".language");
   radioBtns.forEach((item) => {

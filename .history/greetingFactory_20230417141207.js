@@ -65,7 +65,6 @@ function greetingFactory() {
   }
 
   function getAlert() {
-    console.log(newAlert)
     return newAlert;
   }
 
@@ -99,7 +98,7 @@ function greetingFactory() {
     callAlert,
     getAlert,
     clear,
-   
+    callNameError,
     getNameObj,
   };
 }

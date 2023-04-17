@@ -6,6 +6,10 @@ const numCountDisplay = document.querySelector(".numCount");
 const errorDisplay = document.querySelector(".error");
 
 let greetIntance = greetingFactory();
+let sumCount = 0;
+let namesGreeted = {};
+
+// radio & greeting true & greeting[newName] = 0
 
 function greeting() {
   const greetingVal = greetingInput.value;
@@ -14,43 +18,49 @@ function greeting() {
   );
 
   greetIntance.setName(greetingVal);
+
   if (!checkedRadioBtnElement || !greetingVal) {
     greetIntance.callAlert();
     errorDisplay.innerHTML = greetIntance.getAlert();
     errorDisplay.classList.add("message");
   } else if (checkedRadioBtnElement && greetingVal) {
     const languageItem = checkedRadioBtnElement.value;
-    greetIntance.setLanguage(languageItem);
     errorDisplay.innerHTML = "";
-   
-    greetIntance.callAlert();
-    if (greetIntance.getAlert()) {
+    greetIntance.setLanguage(languageItem);
+    errorDisplay.classList.remove("message");
+
+    greetIntance.callNameError();
+    if (greetIntance.getAlert() === "username already exists") {
       errorDisplay.innerHTML = greetIntance.getAlert();
       errorDisplay.classList.add("message");
     }
+
     greetIntance.callNameCount();
-    greetIntance.setLocalStorage();
-
-    numCountDisplay.innerHTML = greetIntance.getNameCount();
-    errorDisplay.classList.remove("message");
-    greetingInput.value = "";
-
     greetingDisplay.innerHTML = greetIntance.getLanguage();
+    let numGreetings = greetIntance.getNameCount();
+    localStorage.setItem("numItem", JSON.stringify(numGreetings));
+    numCountDisplay.innerHTML = numGreetings;
   }
+  resetGreeting();
 }
-greetIntance.getLocalStorage();
-numCountDisplay.innerHTML = greetIntance.getNameCount();
+
+if (localStorage.getItem("numItem")) {
+  sumCount = Number(localStorage.getItem("numItem"));
+}
+numCountDisplay.innerHTML = sumCount;
 
 function resetGreeting() {
   greetingInput.value = "";
 }
 
 function clear() {
-  greetIntance.clear();
-  resetGreeting();
+  localStorage.clear();
+  namesGreeted = {};
+
+  numCountDisplay.innerHTML = sumCount;
   greetingDisplay.innerHTML = "";
-  numCountDisplay.innerHTML = greetIntance.getNameCount();
-  errorDisplay.innerHTML = greetIntance.getAlert();
+  errorDisplay.innerHTML = "";
+  resetGreeting();
   errorDisplay.classList.remove("message");
   const radioBtns = document.querySelectorAll(".language");
   radioBtns.forEach((item) => {
