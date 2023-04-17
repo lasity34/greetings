@@ -43,7 +43,6 @@ function greetingFactory() {
       greetCount++;
 
       greetedObj[newName] = 0;
-     
     }
   }
 
@@ -58,17 +57,17 @@ function greetingFactory() {
       newAlert = "please fill in your name";
     } else if (!getRadioValue()) {
       newAlert = "please select language";
-    }  
+    } else 
   }
 
-  
+  console.log(greetedObj)
   function getAlert() {
     return newAlert;
   }
 
   function callNameError() {
     if (greetedObj[newName] === 0) {
-      newAlert = "username already exists";
+      newAlert = "name Already exists";
     }
   }
 
@@ -92,6 +91,6 @@ function greetingFactory() {
     callAlert,
     getAlert,
     clear,
-    callNameError
+ 
   };
 }

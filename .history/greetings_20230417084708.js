@@ -29,8 +29,6 @@ function greeting() {
     greetIntance.setLanguage(languageItem);
     greetIntance.callNameCount();
     greetIntance.callNameError()
-    errorDisplay.innerHTML = greetIntance.getAlert()
-    errorDisplay.classList.add("message");
     greetingDisplay.innerHTML = greetIntance.getLanguage();
     let numGreetings = greetIntance.getNameCount();
     sumCount = numGreetings;

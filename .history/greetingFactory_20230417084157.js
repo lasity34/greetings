@@ -66,11 +66,11 @@ function greetingFactory() {
     return newAlert;
   }
 
-  function callNameError() {
-    if (greetedObj[newName] === 0) {
-      newAlert = "username already exists";
-    }
-  }
+  // function callNameError() {
+  //   if (greetedObj[newName] === 0) {
+  //     newAlert = "name Already exists";
+  //   }
+  // }
 
   function clear() {
     newName = "";
