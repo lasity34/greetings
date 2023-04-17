@@ -1,0 +1,175 @@
+
+html {
+    font-family: 'Mynerve', cursive;
+    background-color: rgb(255, 245, 238);
+    color: rgb(222, 213, 213);
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(./images/blue-teal-brush-stroke-textured-background\(1\).jpg);
+    background-position: center;
+    background-size: cover;
+    font-size: 1.4rem;
+   
+}
+
+body {
+  height: 100vh;
+}
+
+main {
+    text-align: center;
+   
+}
+
+#title {
+  margin-bottom: 0;
+}
+
+
+/* input */
+
+
+label {
+    font-weight: 600;
+    font-size: 1.3rem;
+    margin-right: .5em;
+   
+}
+
+.inputNameContainer {
+    padding:  0.5em;
+    padding-bottom: 0;
+    margin-right: 1em;
+ 
+    
+}
+
+.numGreetings {
+    text-align: center;
+    padding: 0.5em 0;
+}
+
+.inputNameContainer
+
+.inputName {
+    border-radius: 10px;
+    height: 25px;
+    padding: 0.5em 1em;
+    text-indent: 2px;
+    font-size: 1rem;
+    font-style: italic;
+}
+
+/* button */
+button {
+    --c:  #229091; /* the color*/
+    
+    box-shadow: 0 0 0 .1em inset var(--c); 
+    --_g: linear-gradient(var(--c) 0 0) no-repeat;
+    background: 
+      var(--_g) calc(var(--_p,0%) - 100%) 0%,
+      var(--_g) calc(200% - var(--_p,0%)) 0%,
+      var(--_g) calc(var(--_p,0%) - 100%) 100%,
+      var(--_g) calc(200% - var(--_p,0%)) 100%;
+    background-size: 50.5% calc(var(--_p,0%)/2 + .5%);
+    outline-offset: .1em;
+    transition: background-size .4s, background-position 0s .4s;
+  }
+  button:hover {
+    --_p: 100%;
+    transition: background-position .4s, background-size 0s;
+  }
+  button:active {
+    box-shadow: 0 0 9e9q inset #0009; 
+    background-color: var(--c);
+    color: #fff;
+  }
+
+  button {
+    font-family: system-ui, sans-serif;
+    font-size: 1.2rem;
+    cursor: pointer;
+    padding: .1em .6em;
+    font-weight: bold;  
+    border: none;
+    border-radius: 2%;
+    color: rgb(196, 199, 201);
+  }
+
+  .btn_container {
+    margin-top: 1em;
+  }
+
+  .btn_container p {
+    font-size: 2rem;
+  }
+
+  .greetingDisplay {
+    text-transform: capitalize;
+    font-size: 1.8rem;
+    text-align: center;
+  }
+
+  .radio_container {
+    margin-bottom: 2em;
+  }
+
+  .radio_container label {
+    color: #A799B7
+  }
+
+  .language {
+    margin-right: 1em;
+    
+  }
+
+  .btn_container {
+    display: flex;
+    justify-content: center;
+  }
+
+  .greetBtn {
+    width: 120%;
+  }
+
+  .clearBtn {
+    --c:  #c51616;
+    margin-left: 1em;
+  }
+
+  .unit_btn {
+    --c:  #b1c516;
+  }
+/* 
+  .error {
+    color: rgb(227, 198, 198);
+    font-size: 1.4rem;
+    padding: 0;
+     text-shadow: 2px 2px 5px rgba(207, 196, 196, 0.25);
+    
+  } */
+
+
+  
+  div.message {
+    position: relative;
+    padding: 10px;
+    
+    margin: 30px 10px;
+    box-shadow:0 2px 5px rgba(0,0,0,.3);
+    background: #BBB;
+    color: #FFF;
+    
+    -webkit-transition: all .5s ease;
+       -moz-transition: all .5s ease;
+        -ms-transition: all .5s ease;
+         -o-transition: all .5s ease;
+            transition: all .5s ease;
+  }
+  div.message:hover{
+    box-shadow: 0 15px 20px rgba(10,0,10,.3);
+    -webkit-filter: brightness(110%);
+  }
+  
+
+
+
+  div.message.error{background: #C43;}

@@ -25,12 +25,12 @@ function greeting() {
   } else if (checkedRadioBtnElement && greetingVal) {
     const languageItem = checkedRadioBtnElement.value;
     errorDisplay.classList.remove("message");
+    localStorage.setItem("numItem", JSON.stringify(sumCount));
     greetIntance.setLanguage(languageItem);
     greetIntance.callNameCount();
     greetingDisplay.innerHTML = greetIntance.getLanguage();
     let numGreetings = greetIntance.getNameCount();
     sumCount = numGreetings;
-    localStorage.setItem("numItem", JSON.stringify(sumCount));
     numCountDisplay.innerHTML = numGreetings;
     errorDisplay.innerHTML = "";
   }
