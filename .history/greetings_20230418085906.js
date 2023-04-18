@@ -6,8 +6,7 @@ const numCountDisplay = document.querySelector(".numCount");
 const errorDisplay = document.querySelector(".error");
 
 let greetIntance = greetingFactory();
-sumCount = Number(localStorage.getItem("numItem")) || 0;
-numCountDisplay.innerHTML = sumCount;
+let sumCount = greetIntance.getNameCount()
 
 
 
@@ -35,7 +34,7 @@ function greeting() {
       errorDisplay.classList.add("message");
     } 
      greetIntance.callNameCount()
-     sumCount = greetIntance.getNameCount()
+    
       localStorage.setItem("numItem", JSON.stringify(sumCount))
       
       numCountDisplay.innerHTML = sumCount;
@@ -44,7 +43,8 @@ function greeting() {
   }
 }
 
-
+sumCount = Number(localStorage.getItem("numItem")) || 0;
+numCountDisplay.innerHTML = sumCount;
 
 
 function resetGreeting() {

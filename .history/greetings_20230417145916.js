@@ -6,69 +6,61 @@ const numCountDisplay = document.querySelector(".numCount");
 const errorDisplay = document.querySelector(".error");
 
 let greetIntance = greetingFactory();
-sumCount = Number(localStorage.getItem("numItem")) || 0;
-numCountDisplay.innerHTML = sumCount;
-
-
-
 
 function greeting() {
   const greetingVal = greetingInput.value;
   const checkedRadioBtnElement = document.querySelector(
     "input[name='language']:checked"
-  )
-  greetIntance.setRadio(checkedRadioBtnElement)
+  );
+  
+
   greetIntance.setName(greetingVal);
   if (!checkedRadioBtnElement || !greetingVal) {
-    greetIntance.callAlert()
-    errorDisplay.innerHTML = greetIntance.getAlert();
-    errorDisplay.classList.add("message");
+   
+   
 
   } else if (checkedRadioBtnElement && greetingVal) {
     const languageItem = checkedRadioBtnElement.value;
     greetIntance.setLanguage(languageItem);
     errorDisplay.innerHTML = "";
-    greetIntance.callErrorMessage()
+    // greetIntance.callErrorName()
+    // if (greetIntance.getAlert === "username already exists") {
+    //   errorDisplay.innerHTML = greetIntance.getAlert();
+    //   errorDisplay.classList.add("message");
+    // }
+    greetIntance.callNameCount();
+    greetIntance.setLocalStorage();
+
+    numCountDisplay.innerHTML = greetIntance.getNameCount();
     errorDisplay.classList.remove("message");
-    if (greetIntance.getAlert() === "username already used") {
-      errorDisplay.innerHTML = greetIntance.getAlert()
-      errorDisplay.classList.add("message");
-    } 
-     greetIntance.callNameCount()
-     sumCount = greetIntance.getNameCount()
-      localStorage.setItem("numItem", JSON.stringify(sumCount))
-      
-      numCountDisplay.innerHTML = sumCount;
     greetingInput.value = "";
     greetingDisplay.innerHTML = greetIntance.getLanguage();
+  } else {
+    errorDisplay.innerHTML = greetIntance.getAlert();
+    errorDisplay.classList.add("message");
+    const languageItem = checkedRadioBtnElement.value;
+    greetIntance.setLanguage(languageItem);
   }
 }
-
-
-
+greetIntance.getLocalStorage();
+numCountDisplay.innerHTML = greetIntance.getNameCount();
 
 function resetGreeting() {
   greetingInput.value = "";
 }
 
-function resetGreetingApp() {
+function clear() {
   greetIntance.clear();
   resetGreeting();
   greetingDisplay.innerHTML = "";
   numCountDisplay.innerHTML = greetIntance.getNameCount();
-
-  greetIntance.callAlert();
-  greetIntance.innerHTML = greetIntance.getAlert();
   errorDisplay.innerHTML = ""
   errorDisplay.classList.remove("message");
   const radioBtns = document.querySelectorAll(".language");
-  
-  for (let i = 0; i < radioBtns.length; i++) {
-    radioBtns[i].checked = false
-  }
-
-  location.reload()
+  radioBtns.forEach((item) => {
+    return item.checked = "";
+  });
 }
 
 greetingBtn.addEventListener("click", greeting);
-clearBtn.addEventListener("click", resetGreetingApp);
+clearBtn.addEventListener("click", clear);

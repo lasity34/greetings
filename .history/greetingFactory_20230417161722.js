@@ -27,15 +27,15 @@ function greetingFactory() {
     }
     if (newLanguage === "castilian") {
       return `Saludo, ${newName}`;
-    }
+    } 
   }
 
   function setRadio(radio) {
-    radioItem = radio;
+    radioItem = radio
   }
 
   function getRadio() {
-    return radioItem;
+    return radioItem
   }
 
   function callNameCount() {
@@ -45,34 +45,34 @@ function greetingFactory() {
     }
   }
 
-  // function setLocalStorage() {
-  //   localStorage.setItem("numItem", JSON.stringify(greetCount));
-  // }
+  function setLocalStorage() {
+    localStorage.setItem("numItem", JSON.stringify(greetCount));
+  }
 
-  // function getLocalStorage() {
-  //   greetCount = Number(localStorage.getItem("numItem"));
-  // }
+  function getLocalStorage() {
+    greetCount = Number(localStorage.getItem("numItem"));
+  }
 
   function callAlert() {
-    if (!getRadio() && !newName) {
+    if ( !getRadio() && !newName) {
       newAlert = "please select language and fill in your name";
     } else if (!newName) {
       newAlert = "please fill in your name";
-    } else if (!getRadio()) {
+    } else if ( !getRadio()) {
       newAlert = "please select language";
-    }
+    } 
   }
 
   function callErrorMessage() {
-    console.log(greetedObj);
-    if (greetedObj[newName] === 0) {
-      newAlert = "username already used";
-    } else {
-      newAlert = "";
+    
+    if (greetedObj[newName] = 0) {
+      newAlert = "username already used"
     }
   }
 
+
   function getAlert() {
+    console.log(newAlert)
     return newAlert;
   }
 
@@ -90,13 +90,15 @@ function greetingFactory() {
     return greetCount;
   }
 
+ 
+
   return {
     setName,
     callName,
     setLanguage,
     getLanguage,
-    // setLocalStorage,
-    // getLocalStorage,
+    setLocalStorage,
+    getLocalStorage,
     callNameCount,
     getNameCount,
     callAlert,
@@ -104,6 +106,9 @@ function greetingFactory() {
     clear,
     setRadio,
     getRadio,
-    callErrorMessage,
+    callErrorMessage
   };
 }
+
+
+

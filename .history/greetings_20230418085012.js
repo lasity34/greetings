@@ -6,10 +6,9 @@ const numCountDisplay = document.querySelector(".numCount");
 const errorDisplay = document.querySelector(".error");
 
 let greetIntance = greetingFactory();
+let sumCount = greetIntance.getNameCount()
+console.log(sumCount)
 sumCount = Number(localStorage.getItem("numItem")) || 0;
-numCountDisplay.innerHTML = sumCount;
-
-
 
 
 function greeting() {
@@ -34,10 +33,9 @@ function greeting() {
       errorDisplay.innerHTML = greetIntance.getAlert()
       errorDisplay.classList.add("message");
     } 
-     greetIntance.callNameCount()
-     sumCount = greetIntance.getNameCount()
+    greetIntance.callNameCount()
+    sumCount = greetIntance.getNameCount()
       localStorage.setItem("numItem", JSON.stringify(sumCount))
-      
       numCountDisplay.innerHTML = sumCount;
     greetingInput.value = "";
     greetingDisplay.innerHTML = greetIntance.getLanguage();
@@ -45,6 +43,7 @@ function greeting() {
 }
 
 
+numCountDisplay.innerHTML = sumCount;
 
 
 function resetGreeting() {

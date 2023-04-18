@@ -6,12 +6,8 @@ const numCountDisplay = document.querySelector(".numCount");
 const errorDisplay = document.querySelector(".error");
 
 let greetIntance = greetingFactory();
-sumCount = Number(localStorage.getItem("numItem")) || 0;
-numCountDisplay.innerHTML = sumCount;
-
-
-
-
+let sumCount = greetIntance.getNameCount()
+console.log(sumCount)
 function greeting() {
   const greetingVal = greetingInput.value;
   const checkedRadioBtnElement = document.querySelector(
@@ -34,18 +30,23 @@ function greeting() {
       errorDisplay.innerHTML = greetIntance.getAlert()
       errorDisplay.classList.add("message");
     } 
-     greetIntance.callNameCount()
-     sumCount = greetIntance.getNameCount()
-      localStorage.setItem("numItem", JSON.stringify(sumCount))
-      
-      numCountDisplay.innerHTML = sumCount;
+      greetIntance.callNameCount()
+      localStorage.setItem("numItem", JSON.stringify(sumCount));
+    
+    numCountDisplay.innerHTML = sumCount;
+    
+  
+  
     greetingInput.value = "";
     greetingDisplay.innerHTML = greetIntance.getLanguage();
   }
 }
 
 
+  sumCount = Number(localStorage.getItem("numItem"));
 
+
+numCountDisplay.innerHTML = greetIntance.getNameCount();
 
 function resetGreeting() {
   greetingInput.value = "";

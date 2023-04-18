@@ -6,10 +6,9 @@ const numCountDisplay = document.querySelector(".numCount");
 const errorDisplay = document.querySelector(".error");
 
 let greetIntance = greetingFactory();
-sumCount = Number(localStorage.getItem("numItem")) || 0;
-numCountDisplay.innerHTML = sumCount;
+let sumCount = 0
 
-
+sumCount = Number(localStorage.getItem("numItem"));
 
 
 function greeting() {
@@ -34,17 +33,17 @@ function greeting() {
       errorDisplay.innerHTML = greetIntance.getAlert()
       errorDisplay.classList.add("message");
     } 
-     greetIntance.callNameCount()
-     sumCount = greetIntance.getNameCount()
+    greetIntance.callNameCount()
+    sumCount = greetIntance.getNameCount()
       localStorage.setItem("numItem", JSON.stringify(sumCount))
-      
-      numCountDisplay.innerHTML = sumCount;
+  
     greetingInput.value = "";
     greetingDisplay.innerHTML = greetIntance.getLanguage();
   }
 }
 
 
+numCountDisplay.innerHTML = sumCount;
 
 
 function resetGreeting() {

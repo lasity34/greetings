@@ -6,8 +6,7 @@ const numCountDisplay = document.querySelector(".numCount");
 const errorDisplay = document.querySelector(".error");
 
 let greetIntance = greetingFactory();
-sumCount = Number(localStorage.getItem("numItem")) || 0;
-numCountDisplay.innerHTML = sumCount;
+let sumCount = greetIntance.getNameCount()
 
 
 
@@ -44,7 +43,8 @@ function greeting() {
   }
 }
 
-
+sumCount = Number(localStorage.getItem("numItem")) || 0;
+numCountDisplay.innerHTML = sumCount;
 
 
 function resetGreeting() {

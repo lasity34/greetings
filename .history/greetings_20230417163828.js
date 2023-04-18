@@ -6,11 +6,6 @@ const numCountDisplay = document.querySelector(".numCount");
 const errorDisplay = document.querySelector(".error");
 
 let greetIntance = greetingFactory();
-sumCount = Number(localStorage.getItem("numItem")) || 0;
-numCountDisplay.innerHTML = sumCount;
-
-
-
 
 function greeting() {
   const greetingVal = greetingInput.value;
@@ -28,24 +23,24 @@ function greeting() {
     const languageItem = checkedRadioBtnElement.value;
     greetIntance.setLanguage(languageItem);
     errorDisplay.innerHTML = "";
-    greetIntance.callErrorMessage()
+    greetIntance.callNameCount();
+    greetIntance.setLocalStorage();
+
+    numCountDisplay.innerHTML = greetIntance.getNameCount();
     errorDisplay.classList.remove("message");
+    greetIntance.callErrorMessage()
+    greetIntance.getAlert()
     if (greetIntance.getAlert() === "username already used") {
       errorDisplay.innerHTML = greetIntance.getAlert()
       errorDisplay.classList.add("message");
-    } 
-     greetIntance.callNameCount()
-     sumCount = greetIntance.getNameCount()
-      localStorage.setItem("numItem", JSON.stringify(sumCount))
-      
-      numCountDisplay.innerHTML = sumCount;
+    }
     greetingInput.value = "";
     greetingDisplay.innerHTML = greetIntance.getLanguage();
   }
 }
 
-
-
+greetIntance.getLocalStorage();
+numCountDisplay.innerHTML = greetIntance.getNameCount();
 
 function resetGreeting() {
   greetingInput.value = "";

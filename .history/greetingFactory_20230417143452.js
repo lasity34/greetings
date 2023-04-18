@@ -30,49 +30,44 @@ function greetingFactory() {
     }
   }
 
-  function setRadio(radio) {
-    radioItem = radio;
-  }
-
-  function getRadio() {
-    return radioItem;
-  }
-
   function callNameCount() {
     if (greetedObj[newName] === undefined && newName && newLanguage) {
       greetCount++;
       greetedObj[newName] = 0;
+     
     }
   }
 
-  // function setLocalStorage() {
-  //   localStorage.setItem("numItem", JSON.stringify(greetCount));
-  // }
+  function setLocalStorage() {
+    localStorage.setItem("numItem", JSON.stringify(greetCount));
+   
+  }
 
-  // function getLocalStorage() {
-  //   greetCount = Number(localStorage.getItem("numItem"));
-  // }
+  function getLocalStorage() {
+    greetCount = Number(localStorage.getItem("numItem"));
+  }
+
+
+ 
 
   function callAlert() {
-    if (!getRadio() && !newName) {
+    if (!newLanguage && !newName) {
       newAlert = "please select language and fill in your name";
     } else if (!newName) {
       newAlert = "please fill in your name";
-    } else if (!getRadio()) {
+    } else if (!newLanguage) {
       newAlert = "please select language";
-    }
+    } 
   }
 
-  function callErrorMessage() {
-    console.log(greetedObj);
+  function callErrorName() {
     if (greetedObj[newName] === 0) {
-      newAlert = "username already used";
-    } else {
-      newAlert = "";
-    }
+      newAlert = "username already exists";
+    } 
   }
 
   function getAlert() {
+    console.log(newAlert)
     return newAlert;
   }
 
@@ -90,20 +85,23 @@ function greetingFactory() {
     return greetCount;
   }
 
+  function getNameObj() {
+    return greetedObj;
+  }
+
   return {
     setName,
     callName,
     setLanguage,
     getLanguage,
-    // setLocalStorage,
-    // getLocalStorage,
+    setLocalStorage,
+    getLocalStorage,
     callNameCount,
     getNameCount,
     callAlert,
     getAlert,
     clear,
-    setRadio,
-    getRadio,
-    callErrorMessage,
+    callErrorName,
+    getNameObj,
   };
 }
