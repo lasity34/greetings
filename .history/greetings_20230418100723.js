@@ -32,7 +32,6 @@ function greeting() {
     greetIntance.callNameCount();
     let numGreetings = greetIntance.getNameCount();
     sumCount = numGreetings;
-    greetIntance.setLocalStorage()
     localStorage.setItem("numItem", JSON.stringify(sumCount));
     numCountDisplay.innerHTML = numGreetings;
     greetingInput.value = "";
@@ -40,11 +39,8 @@ function greeting() {
   }
 }
 
-if (localStorage.getItem("numItem")) {
-  greetIntance.getLocalStorage()
-  sumCount = Number(localStorage.getItem("numItem"));
-}
-numCountDisplay.innerHTML = sumCount;
+ sumCount = JSON.parse(localStorage.getItem("numItem")) || 0;
+  numCountDisplay.innerHTML = sumCount;
 
 
 function resetGreeting() {

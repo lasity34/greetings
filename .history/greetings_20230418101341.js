@@ -41,7 +41,6 @@ function greeting() {
 }
 
 if (localStorage.getItem("numItem")) {
-  greetIntance.getLocalStorage()
   sumCount = Number(localStorage.getItem("numItem"));
 }
 numCountDisplay.innerHTML = sumCount;

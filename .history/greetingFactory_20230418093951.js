@@ -45,13 +45,13 @@ function greetingFactory() {
     }
   }
 
-  function setLocalStorage() {
-    localStorage.setItem("numItem", JSON.stringify(greetCount));
-  }
+  // function setLocalStorage() {
+  //   localStorage.setItem("numItem", JSON.stringify(greetCount));
+  // }
 
-  function getLocalStorage() {
-    greetCount = Number(localStorage.getItem("numItem"));
-  }
+  // function getLocalStorage() {
+  //   greetCount = Number(localStorage.getItem("numItem"));
+  // }
 
   function callAlert() {
     if (!getRadio() && !newName) {
@@ -95,8 +95,8 @@ function greetingFactory() {
     callName,
     setLanguage,
     getLanguage,
-    setLocalStorage,
-    getLocalStorage,
+    // setLocalStorage,
+    // getLocalStorage,
     callNameCount,
     getNameCount,
     callAlert,

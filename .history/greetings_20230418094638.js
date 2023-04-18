@@ -30,21 +30,17 @@ function greeting() {
       errorDisplay.classList.add("message");
     }
     greetIntance.callNameCount();
-    let numGreetings = greetIntance.getNameCount();
-    sumCount = numGreetings;
-    greetIntance.setLocalStorage()
+    greetIntance.getNameCount()
     localStorage.setItem("numItem", JSON.stringify(sumCount));
-    numCountDisplay.innerHTML = numGreetings;
+
+    numCountDisplay.innerHTML = sumCount;
     greetingInput.value = "";
     greetingDisplay.innerHTML = greetIntance.getLanguage();
   }
 }
 
-if (localStorage.getItem("numItem")) {
-  greetIntance.getLocalStorage()
   sumCount = Number(localStorage.getItem("numItem"));
-}
-numCountDisplay.innerHTML = sumCount;
+  numCountDisplay.innerHTML = sumCount;
 
 
 function resetGreeting() {
