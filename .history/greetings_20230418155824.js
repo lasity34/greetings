@@ -16,7 +16,6 @@ function greeting() {
   greetIntance.setRadio(checkedRadioBtnElement);
   greetIntance.setName(greetingVal);
 
-  console.log(checkedRadioBtnElement)
   if (!checkedRadioBtnElement || !greetingVal) {
 
     greetIntance.callAlert();

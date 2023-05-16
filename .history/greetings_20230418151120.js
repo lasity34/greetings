@@ -16,7 +16,6 @@ function greeting() {
   greetIntance.setRadio(checkedRadioBtnElement);
   greetIntance.setName(greetingVal);
 
-  console.log(checkedRadioBtnElement)
   if (!checkedRadioBtnElement || !greetingVal) {
 
     greetIntance.callAlert();
@@ -33,14 +32,13 @@ function greeting() {
       errorDisplay.innerHTML = greetIntance.getAlert();
       errorDisplay.classList.add("message");
     }
-    
     greetIntance.callNameCount();
     let numGreetings = greetIntance.getNameCount();
     sumCount = numGreetings;
 
     greetIntance.setLocalStorage()
     localStorage.setItem("numItem", JSON.stringify(sumCount));
-
+    
     numCountDisplay.innerHTML = numGreetings;
     greetingInput.value = "";
     greetingDisplay.innerHTML = greetIntance.getLanguage();

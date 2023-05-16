@@ -16,12 +16,12 @@ function greeting() {
   greetIntance.setRadio(checkedRadioBtnElement);
   greetIntance.setName(greetingVal);
 
-  console.log(checkedRadioBtnElement)
   if (!checkedRadioBtnElement || !greetingVal) {
 
     greetIntance.callAlert();
     errorDisplay.innerHTML = greetIntance.getAlert();
     errorDisplay.classList.add("message");
+
 
   } else if (checkedRadioBtnElement && greetingVal) {
     const languageItem = checkedRadioBtnElement.value;
@@ -33,22 +33,23 @@ function greeting() {
       errorDisplay.innerHTML = greetIntance.getAlert();
       errorDisplay.classList.add("message");
     }
-    
-    greetIntance.callNameCount();
-    let numGreetings = greetIntance.getNameCount();
-    sumCount = numGreetings;
 
-    greetIntance.setLocalStorage()
+    greetIntance.callNameCount();
+    let numGreetings = greetIntance.getGreetObj()
+    console.log(numGreetings)
+    sumCount = numGreetings.length;
+
+   
     localStorage.setItem("numItem", JSON.stringify(sumCount));
 
-    numCountDisplay.innerHTML = numGreetings;
+    numCountDisplay.innerHTML = sumCount
     greetingInput.value = "";
     greetingDisplay.innerHTML = greetIntance.getLanguage();
   }
 }
 
 if (localStorage.getItem("numItem")) {
-  greetIntance.getLocalStorage()
+ 
   sumCount = Number(localStorage.getItem("numItem"));
 }
 numCountDisplay.innerHTML = sumCount;
